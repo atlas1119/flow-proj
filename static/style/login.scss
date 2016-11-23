@@ -1,0 +1,110 @@
+html{
+    min-height: 100%;
+}
+body{
+    background: -o-linear-gradient(top,#0d82e6, #01e4ff);
+    background: -moz-linear-gradient(top, #0d82e6, #01e4ff);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0d82e6), to(#01e4ff));
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#0d82e6',endColorStr='#01e4ff',gradientType='0');
+    // min-height: 800px;
+    min-height: 100%;
+}
+
+.container{
+    background: url('/static/image/login_world_icon.png') no-repeat;
+    width: 853px;
+    height: 444px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding-top: 22px;
+    // margin-top: 35%;
+
+}
+
+.login-logo{
+    width: 363px;
+    height: 54px;
+    margin: 0 auto;
+    // margin-top: 24px;
+    background: url('/static/image/login_logo.png') no-repeat;
+}
+
+.login-segment{
+    width: 358px;
+    height: 336px;
+    margin: 0 auto;
+    margin-top: 24px;
+    background: url('/static/image/login_border_bg.png') no-repeat;
+
+    .login-form{
+        padding: 0 20px;
+        padding-top: 37px;
+    }
+
+    .login-title{
+        color: #7c8e9c;
+        font-size: 16px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .login-sub-title{
+        font-size: 14px;
+        color: #666666;
+        font-weight: normal;
+        margin-bottom: 10px;
+    }
+
+    .login-btn{
+        background: #f7682a;
+        display: block;
+        width: 300px;
+        height: 36px;
+        line-height: 36px;
+        margin: 0 auto;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        margin-top: 15px;
+        border-radius: 2px;
+    }
+
+    .input{
+        border: 1px solid #dbe1e7;
+        // width: 100px;
+        height: 36px;
+        border-radius: 2px;
+
+        .icon{
+            width: 17px;
+            height: 14px;
+            display: inline-block;
+            border-right: 1px solid #dbe1e7;
+            padding:0 10px;
+        }
+
+        input{
+            border: none;
+            display: inline-block;
+            height: 36px;
+            border-radius: 0;
+            line-height: 36px;
+            width: 272px;
+        }
+    }
+
+    .input-name{
+        // border: 1px solid #dbe1e7;
+        .icon{
+            background: url('/static/image/login_name_icon.png') no-repeat;
+            background-position: 10px 0;
+        }
+    }
+
+    .input-password{
+        .icon{
+            background: url('/static/image/login_password_icon.png') no-repeat;
+            background-position: 10px 0;
+        }
+    }
+}

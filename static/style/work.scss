@@ -1,0 +1,442 @@
+.work-container{
+    .work-title{
+        i{
+            display: inline-block;
+            width: 18px;
+            height: 20px;
+            background: url('/static/image/work_title_icon.png') no-repeat;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        span{
+            font-size: 16px;
+            font-weight: bold;
+            color: #4f5e69;
+            line-height: 50px;
+            vertical-align: middle;
+        }
+
+        background-color: #f0f0f0;
+        height: 50px;
+        padding-left: 30px;
+        border-bottom: 1px solid #dbe1e7;
+    }
+
+    .work-sub-tab{
+        border: 1px solid #dbe1e7;
+        padding-left: 0;
+        clear: both;
+        overflow: visible;
+        border-top: none;
+        border-right: none;
+        background-color: #f0f0f0;
+
+        .sub-tab-item{
+            float: left;
+            font-size: 14px;
+            font-weight: normal;
+            padding: 18px 58px;
+            border: 1px solid #dbe1e7;
+            margin: -1px 0 -1px -1px;
+            text-decoration: none;
+            color: #4f5e69;
+            background-color: #f8f8f8;
+            cursor: pointer;
+
+            &.active{
+                background: white;
+                border-bottom-color: white;
+                cursor: default;
+            }
+        }
+
+        .sub-tab-btn{
+            display: inline-block;
+            float: right;
+            width: 150px;
+            height: 36px;
+            background-color: #f7682a;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 7px;
+            margin-right: 30px;
+            border-radius: 3px;
+            span{
+                color: #fff;
+                display: inline-block;
+                font-size: 14px;
+                height:36px;
+                line-height: 36px;
+            }
+
+            i{
+                background: url('/static/image/add_icon.png') no-repeat;
+                display: inline-block;
+                vertical-align: middle;
+                width: 14px;
+                height: 14px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .work-table-container{
+        padding:30px;
+
+        .no-data-container{
+            width: 80px;
+            margin: 0 auto;
+            margin-top: 146px;
+            i{
+                background: url('/static/image/no_data_icon.png') no-repeat;
+                display: block;
+                width: 46px;
+                height: 60px;
+                margin: 0 auto;
+            }
+
+            span{
+                display: block;
+                color: #4f5e69;
+                font-size: 14px;
+                text-align: center;
+                margin-top: 12px;
+                width: 100%;
+            }
+        }
+
+        .work-table{
+            width: 100%;
+            color: #4f5e69;
+            font-size: 12px;
+            border: 1px solid #dbe1e7;
+
+            thead{
+                background: #f4f6f9;
+                height: 50px;
+                // padding-left: 40px;
+                border-bottom: 1px solid #dbe1e7;
+
+                th{
+                    line-height: 50px;
+                    padding-left: 40px;
+                    font-size: 12px;
+                }
+
+            }
+
+            tbody{
+                tr:nth-child(even) {background: #f8f8f8}
+                tr:nth-child(odd) {background: #fff}
+
+                tr{
+                    height: 40px;
+
+                    td{
+                        padding-left: 40px;
+                        font-size: 12px;
+
+                        .warn{
+                            color: #ff5c36;
+                        }
+
+                        .default-btn{
+                            background: #1abefb;
+                            color: #fff;
+                            border-radius: 2px;
+                            display: inline-block;
+                            padding: 6px 13px;
+                            text-decoration: none;
+
+                            &.right{
+                                margin-left: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// dialog
+.flow-group-dialog{
+    h3.flow-title{
+        font-size: 12px;
+        text-align: center;
+        color: #4f5e69;
+        font-weight: bold;
+    }
+
+    .flow-step-container{
+        width: 370px;
+        margin: 0 auto;
+        position: relative;
+        height: 83px;
+        margin-top: 20px;
+
+        .step-container-1,.step-container-2,.step-container-3{
+            position: absolute;
+            width: 75px;
+            height: 80px;
+            z-index: 10;
+
+            span{
+                color: #4f5e69;
+                font-size: 12px;
+                text-align: center;
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .step-round{
+            border: 3px solid #e9edf4;
+            border-radius: 30px;
+            width: 30px;
+            height: 30px;
+            color: #a8b0c3;
+            line-height: 30px;
+            text-align: center;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            background: #fff;
+            &.active{
+                background: #1abefb;
+                color: #fff;
+            }
+        }
+
+        .step-line{
+            background: #e9edf4;
+            height: 6px;
+            width: 137px;
+            position: absolute;
+
+            &.active{
+                background: #1abefb;
+            }
+        }
+
+        .step-container-1{
+            left: 0;
+            top: 0;
+        }
+
+        .step-container-2{
+            left: 147px;
+            top: 0;
+        }
+
+        .step-container-3{
+            right: 0px;
+            top: 0;
+        }
+    }
+
+    .flow-type-container{
+        border-top: 1px solid #dbe1e7;
+        padding-top: 30px;
+        .flow-type-title{
+            color: #4f5e69;
+            font-size: 12px;
+            margin-bottom: 10px;
+            width: 530px;
+            margin: 0 auto;
+        }
+        .flow-type-list{
+            width: 378px;
+            margin: 0 auto;
+            &.step-2{
+                width: 530px;
+                li{
+                    margin-top: 15px;
+                }
+            }
+
+            li{
+                width: 110px;
+                height: 36px;
+                border: 1px solid #4f5e69;
+                border-radius: 3px;
+                color: #4f5e69;
+                font-size: 12px;
+                display: inline-block;
+                margin-right: 20px;
+                text-align: center;
+                line-height: 36px;
+                cursor: pointer;
+                &.last{
+                    margin-right: 0;
+                }
+
+                &.active{
+                    border: 1px solid #f7682a;
+                    color: #f7682a;
+                    background: url("/static/image/type_selected_icon.png") no-repeat;
+                    background-position: right top;
+                }
+
+            }
+        }
+    }
+
+    .login-step-btn{
+        background: #1abefb;
+        height: 36px;
+        width: 150px;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        line-height: 36px;
+        font-size: 14px;
+
+        &.step-2{
+            text-align: center;
+            margin: 30px auto;
+            display: block;
+            margin-bottom: 47px;
+        }
+    }
+
+    .flow-form-container{
+        margin-top: 30px;
+
+        .flow-form-list{
+            width: 375px;
+            margin: 0 auto;
+        }
+
+        .flow-inline{
+            margin-bottom: 20px;
+
+            &.rili-inline{
+                position: relative;
+                cursor: pointer;
+                .rili-icon{
+                    background: url("/static/image/rili_icon.png") no-repeat;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    right: 10px;
+                    top: 8px;
+                }
+            }
+
+        }
+
+        label.login-input-icon-1{
+            font-size: 12px;
+            color: #4f5e69;
+            display: inline-block;
+            width: 62px;
+        }
+        .flow-name{
+            border: 1px solid #dbe1e7;
+            text-shadow: none;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            color: #4f5e69;
+            width: 310px;
+            height: 36px;
+            line-height: 36px;
+        }
+
+        .select{
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            padding: 0;
+            overflow: hidden;
+            background: #fff;
+            color: #4f5e69;
+            border: 1px solid #dbe1e7;
+            height: 36px;
+            text-shadow: none;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            -moz-transition: box-shadow 0.25s ease;
+            -o-transition: box-shadow 0.25s ease;
+            -webkit-transition: box-shadow 0.25s ease;
+            transition: box-shadow 0.25s ease;
+        }
+
+        .select select {
+            cursor: pointer;
+            padding: 0.5em;
+            padding-right: 2em;
+            width: 310px;
+            height: 36px;
+            border: none;
+            background: transparent;
+            background-image: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            text-indent: 0.01px;
+            text-overflow: '';
+            // width: 160% \9;
+            text-transform: none;
+        }
+    }
+
+    .flow-content-container{
+        width: 470px;
+        margin: 0 auto;
+        border: 1px solid #dbe1e7;
+        .content-title{
+            background: #f4f6f9;
+            height: 50px;
+            line-height: 50px;
+            width: 100%;
+            text-align: center;
+            color: #4f5e69;
+            border-bottom: 1px solid #dbe1e7;
+        }
+
+        .content{
+            padding: 20px 0;
+            span{
+                display: inline-block;
+                width: 50%;
+                line-height: 25px;
+                color: #4f5e69;
+            }
+
+            .left-text{
+                text-align: right;
+            }
+        }
+    }
+
+    .btn-container{
+        margin-top: 30px;
+        text-align: center;
+        margin-bottom: 70px;
+        .login-step{
+            width: 150px;
+            height: 36px;
+            text-align: center;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .login-step-1{
+            background: #f7682a;
+            color: #fff;
+        }
+        .login-step-2{
+            background: #c1c8ca;
+            color: #fff;
+            margin-left: 20px;
+        }
+
+    }
+}

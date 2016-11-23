@@ -1,0 +1,447 @@
+/*
+* 按钮，大、中、小（暂无）
+*/
+@mixin ie-radius-shadow() {
+    z-index: 1;
+    zoom: 1;
+    position: relative;
+    behavior: url(/public/pie/PIE.htc);
+}
+.pub_btn {
+    width: 77px;
+    height: 30px;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    background-color: #3c6f9f;
+    border: 1px solid #20486d;
+    cursor: pointer;
+
+    &:hover {
+        background: #447AAD;
+    }
+    &:active {
+        background: #3C6286;
+    }
+
+    &.blue {
+        background-color: #3c6f9f;
+        border: 1px solid #20486d;
+        &:hover {
+            background-color: #447AAD;
+        }
+        &:active {
+            background: #3C6286;
+        }
+    }
+    &.blue1 {
+        background-color: #45b7ff;
+        border: 1px solid #45b7ff;
+        color: #fff;
+        &:hover {
+            background-color: #45b7ff;
+            @include box-shadow(0px -1px 5px #338ac0 inset);
+        }
+        &:active {
+            background: #44aff3;
+            @include box-shadow(0px 1px 5px #338ac0 inset);
+        }
+    }
+    &.bd-raidus {
+        @include border-radius(28px);
+    }
+    &.yellow {
+        border: 1px solid #dc7f06;
+        background: #f2941a;
+        &:hover {
+            background-color: #FFAE44;
+            border: 1px solid #dc7f06;
+        }
+        &:active {
+            background: #E78300;
+            border: 1px solid #dc7f06;
+        }
+    }
+    &.red {
+        border: 1px solid #b92d1c;
+        background: #de4b39;
+        &:hover {
+            background-color: #E55B4A;
+            border: 1px solid #b92d1c;
+        }
+        &:active {
+            background: #B84233;
+            border: 1px solid #b92d1c;
+        }
+    }
+    &.gray {
+        border: 1px solid #9a9a9a;
+        background: #acacac;
+        color: #fff;
+        cursor: default;
+        &:hover {
+            background-color: #acacac;
+            border: 1px solid #9a9a9a;
+        }
+        &:active {
+            background: #acacac;
+            border: 1px solid #9a9a9a;
+        }
+    }
+    &.lightgray {
+        border: 1px solid #dadada;
+        background-color: #eee;
+        color: #878787;
+        cursor: default;
+        &:hover {
+            border: 1px solid #dadada;
+            background-color: #e8e8e8;
+        }
+        &:active {
+            border: 1px solid #dadada;
+            background-color: #e2e2e2;
+        }
+    }
+    &.more-width {
+        width: 102px;
+    }
+    &.small-height {
+        height: 33px;
+    }
+    &.more-height {
+        height: 36px;
+    }
+    &.small-width {
+        width: 100px !important;
+    }
+    &.medium-width {
+        width: 184px !important;
+    }
+    &.large-width {
+        width: 140px !important;
+    }
+    &.huge-width {
+        width: 215px !important;
+    }
+    &.huge-more-width {
+        width: 267px !important;
+    }
+    &.huge-more-width2 {
+        width: 320px !important;
+    }
+    &.huge-more-width3 {
+        width: 260px !important;
+    }
+    &.huge-more-width4 {
+        width: 320px !important;
+    }
+    &.auto-width {
+        width: auto;
+    }
+    &.auto-width-with-padlr10 {
+        width: auto;
+        padding: 0 10px;
+    }
+    &.auto-width-with-padlr20 {
+        width: auto;
+        padding: 0 20px;
+    }
+    &.sms-button, &.sound-code-button {
+        width: 166px !important;
+        height: 36px;
+        font-size: 12px;
+        margin-left: 10px;
+        @include border-radius(18px);
+    }
+    &.huge-more-height {
+        height: 41px !important;
+    }
+    &.huge-more-height2 {
+        height: 46px !important;
+    }
+}
+
+// 大按钮 类型1
+.pub-large-btn {
+    display:inline-block;
+    font-size:22px;
+    padding:12px 31px;
+    border-radius:23px;
+    text-align:center;
+    color:#FFF;
+    background-color:#ff6c6b;
+    cursor:pointer;
+    text-decoration:none;
+    @include ie-radius-shadow;
+}
+// 大按钮 类型2
+.pub-large-btn.type-2 {
+    display:inline-block;
+    font-size:22px;
+    padding:12px 26px;
+    border-radius:25px;
+    border:2px solid #ff6c6b;
+    text-align:center;
+    color:#ff6c6b;
+    background-color:#fff;
+    cursor:pointer;
+    text-decoration:none;
+    @include ie-radius-shadow;
+}
+.pub-large-btn.type-2:hover {
+    background-color:#fd5958;
+    padding:14px 26px;
+    border:none;
+    color:#fff;
+    @include ie-radius-shadow;
+}
+
+.pub-large-btn.type-5{
+    background-color: #45b7ff;
+    &:hover{
+        -moz-box-shadow:inset 0 -1px 1px #539cca;
+        -webkit-box-shadow:inset 0 -1px 1px #539cca;
+        box-shadow:inset 0 -1px 1px #539cca;
+    }
+}
+/*投资列表页会过宽*/
+.invest-project-list .pub-large-btn.type-2 {
+  padding:12px 28px;
+}
+.invest-project-list .pub-large-btn.type-2:hover {
+  padding:14px 31px;
+}
+.pub-large-btn:hover {
+    background-color:#fd5958;
+    -moz-box-shadow:inset 0px -1px 1px #ca4443;
+    -webkit-box-shadow:inset 0px -1px 1px #ca4443;
+    box-shadow:inset 0px -1px 1px #ca4443;
+    text-decoration:none;
+    @include ie-radius-shadow;
+}
+.pub-large-btn.btn-mousedown,.pub-large-btn.type-2.btn-mousedown {
+    -moz-box-shadow:inset 0px 1px 1px #ca4443;
+    -webkit-box-shadow:inset 0px 1px 1px #ca4443;
+    box-shadow:inset 0px 1px 1px #ca4443;
+    @include ie-radius-shadow;
+}
+.pub-large-btn.type-3 {
+    padding:12px 51px;
+    height: auto;
+    @include ie-radius-shadow;
+}
+// 大按钮的禁用状态
+.pub-large-btn.disable, .pub-large-btn.disable:hover {
+    border:2px solid #d3d0b9;
+    background-color:#fffef6;
+    color:#585858;
+    padding:12px 51px;
+    @include ie-radius-shadow;
+    cursor:text;
+}
+.pub-large-btn.disable{
+    &:hover {
+        box-shadow:none;
+    }
+    .btn-mousedown {
+        box-shadow:none;
+    }
+}
+
+// 中按钮
+// long 联系我们 type-2 type-3
+.pub-middle-btn,
+.pub-middle-long-btn {
+    display:inline-block;
+    border:1px solid #ff9660;
+    padding:7px 35px;
+    border-radius:17px;
+    background-color:#FFF;
+    font-size:18px;
+    color:#ff9660;
+    cursor:pointer;
+    @include ie-radius-shadow;
+}
+.pub-middle-btn:hover,
+.pub-middle-long-btn:hover {
+    padding:8px 35px;
+    border:none;
+    background-color:#ff9660;
+    color:#fff;
+    text-decoration:none;
+    -moz-box-shadow:inset 0px -1px 1px #e67236;
+    -webkit-box-shadow:inset 0px -1px 1px #e67236;
+    box-shadow:inset 0px -1px 1px #e67236;
+    @include ie-radius-shadow;
+}
+.pub-middle-btn:hover {
+    padding:8px 36px;
+}
+.pub-middle-btn.btn-mousedown,
+.pub-middle-long-btn.btn-mousedown {
+    -moz-box-shadow:inset 0px 1px 1px #e67236;
+    -webkit-box-shadow:inset 0px 1px 1px #e67236;
+    box-shadow:inset 0px 1px 1px #e67236;
+    @include ie-radius-shadow;
+}
+.pub-middle-long-btn {
+    padding:7px 48px;
+}
+.pub-middle-long-btn:hover {
+    padding:8px 49px;
+}
+.pub-middle-btn.type-2 {
+    background-color:#ff6666;
+    color:#fff;
+    padding:7px 25px;
+    border-radius:17px;
+    font-size:16px;
+}
+.pub-middle-btn.type-2.short {
+    padding:7px 32px;
+}
+.pub-middle-btn.type-2.short:hover {
+    padding:7px 32px;
+}
+.pub-middle-btn.type-2.short.btn-mousedown {
+    padding:7px 32px;
+}
+.pub-middle-btn.type-2:hover {
+    box-shadow:inset 0px -1px 1px #ca4443;
+    padding:7px 25px;
+    border:1px solid #ca4443;
+}
+.pub-middle-btn.type-2.btn-mousedown {
+    box-shadow:inset 0px 1px 1px #ca4443;
+    padding:7px 25px;
+}
+.pub-middle-btn.type-3 {
+    background-color:#fff;
+    color:#585858;
+    border:1px solid #a8a8a8;
+    padding:7px 25px;
+    border-radius:17px;
+    font-size:16px;
+}
+.pub-middle-btn.type-3:hover {
+    padding:7px 25px;
+    box-shadow:inset 0px -1px 1px #8f8f8f;
+}
+.pub-middle-btn.type-3.btn-mousedown {
+    box-shadow:inset 0px 1px 1px #8f8f8f;
+    padding:7px 25px;
+}
+.pub-middle-btn.type-3.short {
+    padding:7px 32px;
+}
+.pub-middle-btn.type-3.short:hover {
+    padding:7px 32px;
+}
+.pub-middle-btn.type-3.short.btn-mousedown {
+    padding:7px 32px;
+}
+
+// 添加按钮 type-1 type-2 颜色不同
+.pub-add-btn {
+    display:inline-block;
+    padding:0 20px;
+    color:white;
+    font-weight:normal;
+    height:24px;
+    line-height:24px;
+    border-radius:12px;
+    background-color:#ff9660;
+    cursor:pointer;
+    @include ie-radius-shadow;
+}
+.pub-add-btn:hover {
+    -moz-box-shadow:inset 0 -1px 1px #e67236;
+    -webkit-box-shadow:inset 0 -1px 1px #e67236;
+    box-shadow:inset 0 -1px 1px #e67236;
+    text-decoration:none;
+    .icon-vertical i {
+        -moz-box-shadow:0 -1px 1px #e67236;
+        -webkit-box-shadow:0 -1px 1px #e67236;
+        box-shadow:0 -1px 1px #e67236;
+    }
+    .icon-cross i {
+        box-shadow:0 0 1px #e67236;
+    }
+    @include ie-radius-shadow;
+}
+.pub-add-btn.btn-mousedown,.pub-add-btn.type-2.btn-mousedown {
+    -moz-box-shadow:inset 0 1px 1px #e67236;
+    -webkit-box-shadow:inset 0 1px 1px #e67236;
+    box-shadow:inset 0 1px 1px #e67236;
+    .icon-vertical i {
+        -moz-box-shadow:0 -1px 1px #e67236;
+        -webkit-box-shadow:0 -1px 1px #e67236;
+        box-shadow:0 -1px 1px #e67236;
+    }
+    .icon-cross i {
+        -moz-box-shadow:0 0 1px #e67236;
+        -webkit-box-shadow:0 0 1px #e67236;
+        box-shadow:0 0 1px #e67236;
+    }
+}
+
+.pub-add-btn.type-2 {
+    background-color:#7cccff;
+    padding:0 20px;
+}
+.pub-add-btn.type-1 icon-vertical i {
+    //left:2px\9;
+}
+.pub-add-btn.type-2:hover {
+    -moz-box-shadow:inset 0 -1px 1px #539cca;
+    -webkit-box-shadow:inset 0 -1px 1px #539cca;
+    box-shadow:inset 0 -1px 1px #539cca;
+    .icon-vertical i {
+        -moz-box-shadow:0 -1px 1px #539cca;
+        -webkit-box-shadow:0 -1px 1px #539cca;
+        box-shadow:0 -1px 1px #539cca;
+    }
+    .icon-cross i {
+        box-shadow:0 0 1px #539cca;
+    }
+}
+.pub-add-btn.type-2.btn-mousedown {
+    -moz-box-shadow:inset 0 1px 1px #539cca;
+    -webkit-box-shadow:inset 0 1px 1px #539cca;
+    box-shadow:inset 0 1px 1px #539cca;
+}
+.pub-add-btn.type-1 {
+    padding:0 6px;
+    //padding:0 5px\9;
+}
+
+// checkbox
+// 网站普遍checkbox
+.pub-normal-checkbox,
+.pub-normal-checkbox.unchecked,
+.pub-normal-radiobox,
+.pub-normal-radiobox.unchecked{
+    display:inline-block;
+    height:16px;
+    vertical-align:text-bottom;
+    cursor:pointer;
+    background:url(/public/images/common/checkbox/zr-icon-pub-checkbox.png) no-repeat 0 0;
+    padding-left:24px;
+    margin:0px;
+    color:#888888;
+    font-size:14px;
+    line-height:16px;
+}
+
+.pub-normal-checkbox:hover,
+.pub-normal-radiobox:hover{
+    text-decoration:none;
+}
+.pub-normal-checkbox.checked {
+    background-position:0 -26px;
+}
+.pub-normal-checkbox.disabled {
+    background-position:0 -52px;
+    cursor:default;
+}

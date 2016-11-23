@@ -1,0 +1,19 @@
+{
+  "combo": false,
+  "comboPattern": "/co??%s",
+  "hash": "f0ab3c",
+  "res": {
+    "components/nav/nav.tpl": {
+      "uri": "components/nav/nav.tpl",
+      "type": "tpl",
+      "deps": [
+        "components/nav/nav.css"
+      ]
+   },
+   "components/nav/nav.css": {
+      "uri": "/static/style/component/nav.css",
+      "type": "css"
+   }
+
+  }
+}

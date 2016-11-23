@@ -1,0 +1,70 @@
+
+.topnavbar-content{
+    height: 60px;
+    // background-color: #18a0f0;
+    background: -o-linear-gradient(left,#178aeb, #1ad6fd);
+    background: -moz-linear-gradient(left, #0d82e6, #1ad6fd);
+    background: -webkit-gradient(linear, 0% 0%, 100% 0%, from(#0d82e6), to(#1ad6fd));
+    // filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#0d82e6',endColorStr='#1ad6fd',gradientType='0');
+
+    .nav-header-left{
+        height: 100%;
+        float: left;
+        width: 213px;
+        a{
+            width: 213px;
+            height: 30px;
+            display: inline-block;
+            line-height: 30px;
+            margin-left: 15px;
+            margin-top: 15px;
+            background: url('/static/image/flow_logo.png') no-repeat;
+        }
+    }
+
+    .nav-header-right{
+        float: right;
+        .header-name{
+            display: inline-block;
+            // line-height: 34px;
+            text-decoration: none;
+            color: #fff;
+            margin-top: 13px;
+            margin-right: 15px;
+        }
+
+        .header-login{
+            line-height: 60px;
+            color: #fff;
+            text-decoration: none;
+            padding: 0px 20px;
+        }
+
+        .header-icon{
+            display: inline-block;
+            background: url('/static/image/user_logo.png') no-repeat;
+            width: 34px;
+            height: 34px;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+
+        .header-text{
+            display: inline-block;
+            height: 34px;
+            line-height: 34px;
+            vertical-align: middle;
+            margin-right: 3px;
+        }
+
+        .header-tip{
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-top:6px solid #fff;
+        }
+
+    }
+}
