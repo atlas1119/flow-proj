@@ -41,7 +41,7 @@
                 <tr>
                     <td>{{item.flow_name}}</td>
                     <td>{%if item.flow_state == 1 %}审核完成{%elif item.flow_state == 2 %}<span>审核未通过，请进行修改</span>{%else%}审核中{%endif%}</td>
-                    <td><a href="" class="default-btn">快速修改</a><a href="" class="default-btn right">查看详情</a></td>
+                    <td>{%if item.flow_state == 2 %}<a href="" class="default-btn right">快速修改</a>{%endif%}<a href="" class="default-btn">查看详情</a></td>
                 </tr>
                 {% endfor %}
             </tbody>

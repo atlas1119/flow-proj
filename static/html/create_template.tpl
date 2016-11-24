@@ -7,11 +7,15 @@
 {% block css %}
     <link rel="stylesheet" href="/static/vendor/css/vendor.css">
     {% css 'formbuilder' %}
+    {% css 'create_template'%}
 {% endblock %}
 
 {% block content %}
-<div class="container" id="fbMain">
-    
+<div class="container">
+    <h3 class="temp-title">创建模板</h3>
+    <div class="fb-container" id="fbMain">
+        
+    </div>
 </div>
 {% endblock %}
 

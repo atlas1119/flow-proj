@@ -1,26 +1,52 @@
 $(function(){
     var postData = {};
     // 选择类型
-    function selectType(dom){
-        dom.click(function(){
+    function selectType(dom,dialog){
+        dom.unbind();
+        dom.bind('click',function(){
             dom.parent().find('.active').removeClass('active');
             $(this).addClass('active');
+            if(dialog){
+                dialog.find(".step-error").html('');
+                getType(dialog.find(".flow-templatetype-list"),$(this).attr('data-id'));
+            }
         });
     }
 
-    function getNodes(dom){
-        $.get('/getworknodes', function(data){
+    function getType(dom,id){
+        $.get('/gettemplatenodes?id='+id,function(data){
             var html = '';
             for (var i = 0; i < data.nodes.length; i++) {
                 if(i == 0){
                     html += '<li class="active" data-id="'+ data.nodes[i]._id +'">'+data.nodes[i].node_name+'</li>'
                 } else {
-                    html += '<li>'+data.nodes[i].node_name+'</li>';
+                    html += '<li data-id="'+ data.nodes[i]._id +'">'+data.nodes[i].node_name+'</li>';
+                }
+            }
+            dom.html(html?html:"<div style='margin:10px 0;font-size:12px;'>暂无模板</div>");
+            dom.find("li").unbind();
+            dom.find("li").bind('click',function(){
+                dom.find('.active').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    }
+
+    function getNodes(dom,fn){
+        $.get('/getworknodes', function(data){
+            var html = '';
+            for (var i = 0; i < data.nodes.length; i++) {
+                if(i == 0){
+                    html += '<li class="active" data-id="'+ data.nodes[i]._id +'">'+data.nodes[i].work_name+'</li>'
+                } else {
+                    html += '<li data-id="'+ data.nodes[i]._id +'">'+data.nodes[i].work_name+'</li>';
                 }
             }
 
             dom.html(html);
+            fn && fn.call(this,data.nodes[0]);
         });
+
     }
 
     function actionStep2(){
@@ -44,8 +70,14 @@ $(function(){
                             '<ul class="flow-type-list step-2 clearfix">',
                                 '加载中...',
                             '</ul>',
+                            '<div class="flow-create-work"><i></i><span id="showNodeInput">创建新节点</span><div class="input-node none"><input type="text" /><button class="left">确定</button><button class="right">取消</button></div></div>',
+                            '<h6 class="flow-type-title">选择类型：</h6>',
+                            '<ul class="flow-templatetype-list step-2 clearfix">',
+                                '加载中...',
+                            '</ul>',
+                            '<div class="flow-create-work" style="margin-top:10px;"><i></i><a href="javascript:void(0);" target="_blank" id="createTemp">创建新模板</a></div>',
                         '</div>',
-                        '<button class="login-step-btn step-2">下一步</button>',
+                        '<div style="text-align:center"><button class="login-step-btn step-2">下一步</button><span class="step-error"></span></div>',
                     '</div>'].join('');
         $.ext_dialog.open({
             title:'',
@@ -54,15 +86,50 @@ $(function(){
             final: function(){
                 var dialog = $(this).parent();
                 dialog.addClass("flow-group-dialog");
-                selectType(dialog.find('.flow-type-list li'));
-                getNodes(dialog.find('.flow-type-list'));
-                dialog.find('.login-step-btn').click(function(){
+                getNodes(dialog.find('.flow-type-list'), function(node){
+                    getType(dialog.find(".flow-templatetype-list"), node._id);
+                    selectType(dialog.find('.flow-type-list li'),dialog);
+                });
+                dialog.find("#showNodeInput").click(function(){
+                    dialog.find(".input-node").toggle();
+                });
 
-                    postData.flow_nodes = {
+                dialog.find(".input-node .right").click(function(){
+                    dialog.find(".input-node").hide();
+                });
+
+                dialog.find("#createTemp").click(function(){
+                    window.location.href = "/createtemplate?id="+dialog.find('.flow-type-list li.active').attr('data-id');
+                });
+
+                dialog.find(".input-node .left").click(function(){
+                    var val = dialog.find(".input-node input");
+                    if(val.val()){
+                        $.post("/createworknodes",{
+                            work_name:val.val()
+                        },function(data){
+                            if(data.success){
+                                dialog.find(".input-node").hide();
+                                dialog.find('.flow-type-list').append('<li data-id='+ data.node._id +'>'+val.val()+'</li>');
+                                selectType(dialog.find('.flow-type-list li'),dialog);
+                                val.val("");
+                            }else{
+                                alert("添加失败");
+                            }
+                        });
+                    }
+                });
+
+                dialog.find('.login-step-btn').click(function(){
+                    var temp_id = dialog.find(".flow-templatetype-list .active").attr("data-id");
+                    postData.flow_nodes = temp_id?temp_id:null;
+                    if(!temp_id){
+                        dialog.find(".step-error").html('请选择模板，若无，请创建新模板');
+                        return;
+                    }
+                    postData.temp_node = {
                         node_name: dialog.find(".flow-type-list .active").text(),
-                        node_struct: '{name:"日期"}',
-                        node_reviewer: '小于',
-                        node_reviewer_id: '583507c53e78301b784e3573'
+                        node_type: dialog.find(".flow-templatetype-list .active").text()
                     };
 
                     actionStep3();
@@ -92,7 +159,8 @@ $(function(){
                             '<div class="content">',
                                 '<span class="left-text">业务流名称：</span><span>'+ postData.flow_name +'</span>',
                                 '<span class="left-text">开始日期：</span><span>'+ postData.start_time +'</span>',
-                                '<span class="left-text">当前工作节点：</span><span>'+ postData.flow_nodes.node_name +'</span>',
+                                '<span class="left-text">当前工作节点：</span><span>'+ postData.temp_node.node_name +'</span>',
+                                '<span class="left-text">节点类型：</span><span>'+ postData.temp_node.node_type +'</span>',
                                 '<span class="left-text">业务品种：</span><span>'+postData.flow_breed+'</span>',
                             '</div>',
                         '</div>',
@@ -117,7 +185,7 @@ $(function(){
                         if(data.success){
                             $.ext_dialog.open({
                                 width: 300,
-                                haml: '<div style="text-align:center">创建成功！</div>',
+                                haml: '<div style="text-align:center;margin-bottom:30px;">创建成功！</div>',
                                 buttons:{
                                     "确定":function(){
                                         window.location.reload(true);

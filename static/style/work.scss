@@ -150,7 +150,7 @@
                             text-decoration: none;
 
                             &.right{
-                                margin-left: 20px;
+                                margin-right: 20px;
                             }
                         }
                     }
@@ -246,7 +246,80 @@
             width: 530px;
             margin: 0 auto;
         }
-        .flow-type-list{
+
+        .flow-create-work{
+            width: 530px;
+            margin: 24px auto;
+
+            i{
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                vertical-align: middle;
+                margin-right: 5px;
+                background: url("/static/image/add_work_node_icon.png") no-repeat;
+            }
+
+            a,span{
+                display: inline-block;
+                height: 24px;
+                line-height: 24px;
+                color: #1abefb;
+                font-size: 12px;
+                margin-right: 10px;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .none{
+                display: none;
+            }
+
+            .input-node{
+                display: inline-block;
+
+                input{
+                    border: 1px solid #dbe1e7;
+                    height: 24px;
+                    line-height: 24px;
+                    width: 150px;
+                    margin-right: 10px;
+                }
+
+                .left{
+                    display: inline-block;
+                    width: 70px;
+                    height: 24px;
+                    text-align: center;
+                    line-height: 24px;
+                    font-size: 12px;
+                    color: #fff;
+                    vertical-align: bottom;
+                    border-radius: 2px;
+                    border: none;
+                    cursor: pointer;
+                    margin-right: 10px;
+                    background: #f7682a;
+                }
+
+                .right{
+                    display: inline-block;
+                    font-size: 12px;
+                    width: 70px;
+                    vertical-align: bottom;
+                    height: 24px;
+                    color: #fff;
+                    cursor: pointer;
+                    text-align: center;
+                    line-height: 24px;
+                    border-radius: 2px;
+                    border: none;
+                    background: #c1c8ca;
+                }
+            }
+        }
+
+        .flow-templatetype-list,.flow-type-list{
             width: 378px;
             margin: 0 auto;
             &.step-2{
@@ -298,9 +371,15 @@
         &.step-2{
             text-align: center;
             margin: 30px auto;
-            display: block;
+            display: inline-block;
             margin-bottom: 47px;
         }
+    }
+
+    .step-error{
+        color: red;
+        font-size: 12px;
+        margin-left: 10px;
     }
 
     .flow-form-container{
@@ -439,4 +518,9 @@
         }
 
     }
+}
+
+.dialog-foot{
+    text-align: center;
+    margin-bottom: 20px;
 }
