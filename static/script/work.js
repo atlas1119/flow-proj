@@ -122,11 +122,14 @@ $(function(){
 
                 dialog.find('.login-step-btn').click(function(){
                     var temp_id = dialog.find(".flow-templatetype-list .active").attr("data-id");
-                    postData.flow_nodes = temp_id?temp_id:null;
+                    // 暂时还没有生成节点
+                    // postData.flow_nodes = [null];
                     if(!temp_id){
                         dialog.find(".step-error").html('请选择模板，若无，请创建新模板');
                         return;
                     }
+                    
+                    postData.flow_first_template_id = temp_id;
                     postData.temp_node = {
                         node_name: dialog.find(".flow-type-list .active").text(),
                         node_type: dialog.find(".flow-templatetype-list .active").text()
@@ -188,7 +191,7 @@ $(function(){
                                 haml: '<div style="text-align:center;margin-bottom:30px;">创建成功！</div>',
                                 buttons:{
                                     "确定":function(){
-                                        window.location.reload(true);
+                                        window.location.href = '/flow/detail?id='+data.flow._id;
                                     }
                                 }
                             });

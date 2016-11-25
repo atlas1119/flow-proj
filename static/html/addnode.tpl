@@ -13,7 +13,6 @@
 {% endblock %}
 
 {% block right_content %}
-{%if flow.flow_nodes.length == 0 %}
 <div class="detail-container">
     <h3 class="detail-title"><span>业务流名称:{{flow.flow_name}}</span>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -64,39 +63,6 @@
         </div>
     </div>
 </div>
-
-{%else%}
-<div class="detail-container">
-    <h3 class="detail-title"><span>业务流名称:{{flow.flow_name}}</span>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span>业务流流水号:{{flow._id}}</span>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span>创建日期:{{moment(flow.created_at).format("YYYY-MM-DD")}}</span></h3>
-    <div class="detail-content">
-        <div class="detail-flow-info">
-            <div class="node-inline">
-                <label class="login-input-icon-1">事业部：</label>
-                <label class="login-input-icon-1"></label>
-            </div>
-            <div class="node-inline">
-                <label class="login-input-icon-1">事业部：</label>
-                <label class="login-input-icon-1"></label>
-            </div>
-            <div class="node-inline">
-                <label class="login-input-icon-1">事业部：</label>
-                <label class="login-input-icon-1"></label>
-            </div>
-        </div>
-        <div class="detail-node-list">
-
-        </div>
-
-        <div class="detail-node-form">
-            <button class="detail-add-btn" id="detailAddNode"><i></i>增加后续节点</button>
-        </div>
-    </div>
-</div>
-{%endif%}
 {% endblock %}
 
 {% block js %}
@@ -105,14 +71,8 @@
     <script src="/static/vendor/js/vendor.js"></script>
     {%js 'formbuilder'%}
     {%js 'jquery_zr_extension' %}
-    {%if flow.flow_nodes.length == 0 %}
-        <script>
-            window.templateId = "{{flow.flow_first_template_id}}";
-            window.flow_id = "{{flow._id}}";
-        </script>
-        {%js 'detail'%}
-    {%else%}
-        <script>window.flow_id = "{{flow._id}}";</script>
-        {%js 'more_nodes_detail'%}
-    {%endif%}
+    <script>
+        window.templateId = "{{tplid}}";
+    </script>
+    {%js 'detail'%}
 {% endblock %}
