@@ -76,6 +76,7 @@
                 line-height: 36px;
                 cursor: pointer;
                 color: #fff;
+                text-decoration: none;
                 border-radius: 3px;
             }
         }
@@ -220,5 +221,155 @@
             // width: 160% \9;
             text-transform: none;
         }
+    }
+}
+
+.chain-group-dialog{
+
+    .chain-type-container{
+        width: 100px;
+        height: 100px;
+        border: 1px solid #dbe1e7;
+        position: relative;
+        margin: 0 auto;
+        cursor: pointer;
+        .line-1{
+            display: block;
+            position: absolute;
+            width: 50%;
+            height: 6px;
+            top: 46px;
+            left: 22px;
+            background: #1abefb;
+        }
+        .line-2{
+            display: block;
+            position: absolute;
+            width: 6px;
+            height: 50%;
+            background: #1abefb;
+            top: 25px;
+            left: 45px;
+        }
+    }
+
+    .chain-title{
+        text-align:center;
+        margin: 10px auto;
+        font-size: 14px;
+        color: #4f5e69;
+    }
+
+    .flow-form-container{
+        margin-top: 30px;
+
+        .flow-form-list{
+            width: 375px;
+            margin: 0 auto;
+        }
+
+        .flow-inline{
+            margin-bottom: 20px;
+
+            &.rili-inline{
+                position: relative;
+                cursor: pointer;
+                .rili-icon{
+                    background: url("/static/image/rili_icon.png") no-repeat;
+                    width: 20px;
+                    height: 20px;
+                    position: absolute;
+                    right: 10px;
+                    top: 8px;
+                }
+            }
+
+        }
+
+        label.login-input-icon-1{
+            font-size: 12px;
+            color: #4f5e69;
+            display: inline-block;
+            width: 62px;
+            text-align: right;
+        }
+        .flow-name{
+            border: 1px solid #dbe1e7;
+            text-shadow: none;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            color: #4f5e69;
+            width: 310px;
+            height: 36px;
+            line-height: 36px;
+        }
+
+        .profit-input{
+            border: none;
+        }
+
+        .select{
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            padding: 0;
+            overflow: hidden;
+            background: #fff;
+            color: #4f5e69;
+            border: 1px solid #dbe1e7;
+            height: 36px;
+            text-shadow: none;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            -moz-transition: box-shadow 0.25s ease;
+            -o-transition: box-shadow 0.25s ease;
+            -webkit-transition: box-shadow 0.25s ease;
+            transition: box-shadow 0.25s ease;
+        }
+
+        .select select {
+            cursor: pointer;
+            padding: 0.5em;
+            padding-right: 2em;
+            width: 310px;
+            height: 36px;
+            border: none;
+            background: transparent;
+            background-image: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            text-indent: 0.01px;
+            text-overflow: '';
+            // width: 160% \9;
+            text-transform: none;
+        }
+    }
+
+    .btn-container{
+        margin-top: 30px;
+        text-align: center;
+        margin-bottom: 32px;
+        .login-step{
+            width: 150px;
+            height: 36px;
+            text-align: center;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .login-step-1{
+            background: #f7682a;
+            color: #fff;
+        }
+        .login-step-2{
+            background: #c1c8ca;
+            color: #fff;
+            margin-left: 20px;
+        }
+
     }
 }

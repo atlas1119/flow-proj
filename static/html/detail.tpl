@@ -88,23 +88,26 @@
             </div>
         </div>
         <div class="detail-node-list">
-
+            
         </div>
-
+        {%if flow.flow_state != 1%}
         <div class="detail-node-form">
             <button class="detail-add-btn" id="detailAddNode"><i></i>增加后续节点</button>
+            <button class="detail-add-btn" id="detailAddChain"><i></i>增加业务链条信息</button>
         </div>
+        {%endif%}
     </div>
 </div>
 {%endif%}
 {% endblock %}
 
 {% block js %}
+    <script src="/static/vendor/js/vendor.js"></script>
     {%js 'jquery_core' %}
     {%js 'jquery_datepicker' %}
-    <script src="/static/vendor/js/vendor.js"></script>
     {%js 'formbuilder'%}
     {%js 'jquery_zr_extension' %}
+
     {%if flow.flow_nodes.length == 0 %}
         <script>
             window.templateId = "{{flow.flow_first_template_id}}";
@@ -112,7 +115,11 @@
         </script>
         {%js 'detail'%}
     {%else%}
-        <script>window.flow_id = "{{flow._id}}";</script>
+        <script>
+            window.flow_id = "{{flow._id}}";
+            window.user_id = "{{session.user.id}}";
+        </script>
         {%js 'more_nodes_detail'%}
     {%endif%}
+
 {% endblock %}

@@ -14,26 +14,11 @@
 
 {% block right_content %}
 <div class="detail-container">
-    <h3 class="detail-title"><span>业务流名称:{{flow.flow_name}}</span>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span>业务流流水号:{{flow._id}}</span>
+    <h3 class="detail-title"><span>名称:{{node.node_name}}</span>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span>创建日期:{{moment(flow.created_at).format("YYYY-MM-DD")}}</span></h3>
+        <span>创建日期:{{moment(node.created_at).format("YYYY-MM-DD")}}</span></h3>
     <div class="detail-content">
-        <div class="detail-flow-info">
-            <div class="node-inline">
-                <label class="login-input-icon-1">事业部：</label>
-                <label class="login-input-icon-1"></label>
-            </div>
-            <div class="node-inline">
-                <label class="login-input-icon-1">事业部：</label>
-                <label class="login-input-icon-1"></label>
-            </div>
-            <div class="node-inline">
-                <label class="login-input-icon-1">事业部：</label>
-                <label class="login-input-icon-1"></label>
-            </div>
-        </div>
+
         <div class="detail-form">
             <h6 class="form-title"><i></i>基本信息</h6>
             <div class="form-container" id="formMain"></div>
@@ -46,7 +31,11 @@
                     <div class="select">
                           <select name="make" id="workNodeSelect">
                             {%for item in work_nodes%}
+                                {%if item.work_name == selected_work_node.work_name %}
+                                <option value="{{item._id}}" data-user-id="{{item.person_manage_id}}" selected="selected">{{item.work_name}}</option>
+                                {%else%}
                                 <option value="{{item._id}}" data-user-id="{{item.person_manage_id}}">{{item.work_name}}</option>
+                                {%endif%}
                             {%endfor%}
                           </select>
                     </div>
@@ -72,8 +61,9 @@
     {%js 'formbuilder'%}
     {%js 'jquery_zr_extension' %}
     <script>
-        window.templateId = "{{tplid}}";
-        window.flow_id = "{{flow._id}}";
+        window.node_struct = '{{node.node_struct}}';
+        window.node_id = '{{node._id}}';
+        // window.flow_id = "{{flow._id}}";
     </script>
-    {%js 'detail'%}
+    {%js 'editnode'%}
 {% endblock %}
