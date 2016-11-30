@@ -20,25 +20,31 @@
         </div>
     </div>
     <div class="work-table-container">
-        {%if flows.length == 0 %}
+        {%if users.length == 0 %}
         <div class="no-data-container">
-            <i></i><span>暂无业务流</span>
+            <i></i><span>暂无员工信息</span>
         </div>
         {%else%}
         <table class="work-table">
             <thead>
                 <tr>
-                    <th>业务流名称</th>
-                    <th>状态</th>
+                    <th>员工ID</th>
+                    <th>姓名</th>
+                    <th>手机号</th>
+                    <th>邮箱</th>
+                    <th>部门</th>
                     <th>操作</th>
                 </tr>
             </thead>
             <tbody>
-                {% for item in flows %}
+                {% for item in users %}
                 <tr>
-                    <td>{{item.flow_name}}</td>
-                    <td>{%if item.flow_state == 1 %}审核完成{%elif item.flow_state == 2 %}<span>审核未通过，请进行修改</span>{%else%}审核中{%endif%}</td>
-                    <td>{%if item.flow_state == 2 %}<a href="" class="default-btn right">快速修改</a>{%endif%}<a href="/flow/detail?id={{item._id}}" class="default-btn">查看详情</a></td>
+                    <td>{{item.employee_id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.department}}</td>
+                    <td><a href="" class="default-btn right">快速修改</a><a href="/flow/detail?id={{item._id}}" class="default-btn">查看详情</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
