@@ -1,19 +1,29 @@
 
+.flow-main .flow-main-right{
+    padding-bottom: 0;
+}
+
+.work-container{
+    height: 100%;
+}
+
 .report-container{
     display: -webkit-flex;
     display: flex;
     flex-direction: row;
+    height: 100%;
 
     .report-left{
         width: 142px;
         border-right: 1px solid #dbe1e7;
+        background-color: #f0f0f0;
 
         .report-tab{
             width: 100%;
 
             dl{
                 border-top: none;
-                border-bottom: solid 1px #ebebeb;
+                border-bottom: solid 1px #dbe1e7;
                 font-size: 14px;
             }
 
@@ -28,30 +38,30 @@
                     position: absolute;
                     border-style: solid;
                     border-width: 4px;
-                    border-left-color: #1a89ed;
+                    border-left-color: #4f5e69;
                     width: 0;
                     height: 0;
                     line-height: 0;
                     font-size: 0;
                     top: 16px;
-                    left: 20px;
+                    right: 20px;
                 }
 
                 a{
                     display: block;
                     text-decoration: none;
                     padding-left: 33px;
-                    background-color: #fff;
-                    font-weight: bold;
+                    background-color: #f8f8f8;
+                    font-weight: normal;
                     color: #666;
                 }
 
                 &.list-on i{
-                    top: 17px;
+                    top: 18px;
                     border-color: transparent;
                     border-style: solid;
                     border-width: 4px;
-                    border-top-color: #1a89ed;
+                    border-top-color: #4f5e69;
                     width: 0;
                     height: 0;
                     line-height: 0;
@@ -60,9 +70,10 @@
             }
 
             dd{
-                background: #fff;
-                border-top: solid 1px #f0f0f0;
-                display: block;
+                background: #f0f0f0;
+                border-top: solid 1px #dbe1e7;
+                // display: block;
+                display: none;
 
                 a{
                     display: block;
@@ -71,13 +82,15 @@
                     text-decoration: none;
                     line-height: 40px;
                     padding-left: 45px;
-                    border-bottom: 1px solid #f0f0f0;
+                    border-bottom: 1px solid #dbe1e7;
                 }
 
                 a.item-on{
-                    color: #1a89ed;
-                    background-color: #ebf5fe;
-                    font-weight: bold;
+                    color: #1abefb;
+                    width: 69%;
+                    border-right: none;
+                    background-color: #fff;
+                    font-weight: normal;
                 }
 
 
@@ -90,6 +103,144 @@
     .report-right{
         flex: 1;
 
+        .fliter-container{
+            margin-top: 30px;
+            padding-left: 30px;
+
+            .flow-form-list{
+                width: 375px;
+                margin: 0 auto;
+            }
+
+            .flow-inline{
+                margin-bottom: 20px;
+                display: inline-block;
+                margin-right: 85px;
+                position: relative;
+
+                &.rili-inline{
+                    position: relative;
+                    cursor: pointer;
+                    .rili-icon{
+                        background: url("/static/image/rili_icon.png") no-repeat;
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        right: 10px;
+                        top: 8px;
+                    }
+                }
+
+            }
+
+            label.login-input-icon-1{
+                font-size: 12px;
+                color: #4f5e69;
+                display: inline-block;
+                width: 62px;
+                text-align: right;
+            }
+
+            .flow-name{
+                border: 1px solid #dbe1e7;
+                text-shadow: none;
+                -moz-border-radius: 2px;
+                -webkit-border-radius: 2px;
+                border-radius: 2px;
+                color: #4f5e69;
+                width: 310px;
+                height: 36px;
+                line-height: 36px;
+            }
+
+            .input-time{
+                width: 140px;
+            }
+
+            .flow-arrow{
+                display: block;
+                position: absolute;
+                border-style: solid;
+                border-width: 4px;
+                border-left-color: #4f5e69;
+                // top: 16px;
+                right: 20px;
+                top: 18px;
+                border-color: transparent;
+                border-top-color: #4f5e69;
+                width: 0;
+                height: 0;
+                line-height: 0;
+                font-size: 0;
+            }
+
+            .profit-input{
+                border: none;
+            }
+
+            .select{
+                display: inline-block;
+                position: relative;
+                vertical-align: middle;
+                padding: 0;
+                overflow: hidden;
+                background: #fff;
+                color: #4f5e69;
+                border: 1px solid #dbe1e7;
+                height: 36px;
+                text-shadow: none;
+                -moz-border-radius: 2px;
+                -webkit-border-radius: 2px;
+                border-radius: 2px;
+                -moz-transition: box-shadow 0.25s ease;
+                -o-transition: box-shadow 0.25s ease;
+                -webkit-transition: box-shadow 0.25s ease;
+                transition: box-shadow 0.25s ease;
+            }
+
+            .select select {
+                cursor: pointer;
+                padding: 0.5em;
+                padding-right: 2em;
+                width: 310px;
+                height: 36px;
+                border: none;
+                background: transparent;
+                background-image: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                text-indent: 0.01px;
+                text-overflow: '';
+                // width: 160% \9;
+                text-transform: none;
+            }
+
+            .btn-container{
+                margin-top: 30px;
+                text-align: center;
+                margin-bottom: 32px;
+                .login-step{
+                    width: 150px;
+                    height: 36px;
+                    text-align: center;
+                    display: inline-block;
+                    border: none;
+                    cursor: pointer;
+                }
+
+                .login-step-1{
+                    background: #f7682a;
+                    color: #fff;
+                }
+                .login-step-2{
+                    background: #c1c8ca;
+                    color: #fff;
+                    margin-left: 20px;
+                }
+
+            }
+        }
     }
 }
 
