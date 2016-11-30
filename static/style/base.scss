@@ -153,9 +153,32 @@ input,button,textarea{
                             background: url('/static/image/side_staff_selected.png') no-repeat;
                         }
                     }
-
-
                 }
+
+                &:hover{
+                    span{
+                        color: #fff;
+                    }
+
+                    i{
+                        &.tab-1{
+                            background: url('/static/image/side_work_selected.png') no-repeat;
+                        }
+
+                        &.tab-2{
+                            background: url('/static/image/side_model_selected.png') no-repeat;
+                        }
+
+                        &.tab-3{
+                            background: url('/static/image/side_report_selected.png') no-repeat;
+                        }
+
+                        &.tab-4{
+                            background: url('/static/image/side_staff_selected.png') no-repeat;
+                        }
+                    }
+                }
+
             }
         }
     }

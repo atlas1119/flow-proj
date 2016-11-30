@@ -232,7 +232,7 @@ $(function(){
                     getType($(".flow-templatetype-list"),next_worknode_id);
                     getNextWorkNode(dialog,next_worknode_id);
                     dialog.find("#createTemp").click(function(){
-                        window.location.href = "/createtemplate?id="+next_worknode_id;
+                        window.location.href = "/model/createtemplate?id="+next_worknode_id;
                     });
                     dialog.find('.login-step-btn').click(function(){
                         window.location.href = "/flow/addnode?id="+window.flow_id + "&tplid="+$(".flow-templatetype-list .active").attr("data-id");

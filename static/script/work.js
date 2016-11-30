@@ -99,7 +99,7 @@ $(function(){
                 });
 
                 dialog.find("#createTemp").click(function(){
-                    window.location.href = "/createtemplate?id="+dialog.find('.flow-type-list li.active').attr('data-id');
+                    window.location.href = "/model/createtemplate?id="+dialog.find('.flow-type-list li.active').attr('data-id');
                 });
 
                 dialog.find(".input-node .left").click(function(){
@@ -128,7 +128,7 @@ $(function(){
                         dialog.find(".step-error").html('请选择模板，若无，请创建新模板');
                         return;
                     }
-                    
+
                     postData.flow_first_template_id = temp_id;
                     postData.temp_node = {
                         node_name: dialog.find(".flow-type-list .active").text(),
