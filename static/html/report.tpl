@@ -43,7 +43,7 @@
                         <i></i><a href="#" onclick="return false;">仓储</a>
                     </dt>
                     <dd>
-                        <a href="/prompt/index" >毛利表</a>
+                        <a href="/prompt/index" >仓储表</a>
                         <a href="/prompt/index" >毛利表</a>
                         <a href="/prompt/index" >毛利表</a>
                     </dd>

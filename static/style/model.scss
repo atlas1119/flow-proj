@@ -38,4 +38,56 @@
             }
         }
     }
+
+    .node-type{
+        float: right;
+        margin-top: 28px;
+        margin-right: 30px;
+    }
+
+    label.login-input-icon-1{
+        font-size: 12px;
+        color: #4f5e69;
+        display: inline-block;
+        width: 100px;
+        text-align: right;
+    }
+
+    .select{
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        padding: 0;
+        overflow: hidden;
+        background: #fff;
+        color: #4f5e69;
+        border: 1px solid #dbe1e7;
+        height: 36px;
+        text-shadow: none;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        -moz-transition: box-shadow 0.25s ease;
+        -o-transition: box-shadow 0.25s ease;
+        -webkit-transition: box-shadow 0.25s ease;
+        transition: box-shadow 0.25s ease;
+    }
+
+    .select select {
+        cursor: pointer;
+        padding: 0.5em;
+        padding-right: 2em;
+        width: 150px;
+        height: 36px;
+        border: none;
+        background: transparent;
+        background-image: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        text-indent: 0.01px;
+        text-overflow: '';
+        // width: 160% \9;
+        text-transform: none;
+    }
 }
