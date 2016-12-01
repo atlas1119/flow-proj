@@ -34,12 +34,14 @@
                     <span>我的报表</span>
                 </a>
             </li>
+            {%if session.user.role == 0%}
             <li class="{{'active' if cur_path.indexOf('staff') != -1 else ''}}">
                 <a href="/staff">
                     <i class="tab-4"></i>
                     <span>员工管理</span>
                 </a>
             </li>
+            {%endif%}
         </ul>
     </div>
     <div class="flow-main-right">

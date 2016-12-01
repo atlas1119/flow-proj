@@ -1,0 +1,265 @@
+.flow-main .flow-main-right{
+    padding-bottom: 0;
+
+}
+
+.work-container{
+    height: 100%;
+
+    .work-sub-tab{
+        padding-left: 0;
+        clear: both;
+        overflow: visible;
+        border-top: none;
+        border-right: none;
+        border: none;
+        background-color: transparent;
+
+        .sub-tab-btn{
+            display: inline-block;
+            float: right;
+            width: 150px;
+            height: 36px;
+            background-color: #f7682a;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 28px;
+            margin-right: 30px;
+            border-radius: 3px;
+            span{
+                color: #fff;
+                display: inline-block;
+                font-size: 14px;
+                height:36px;
+                line-height: 36px;
+            }
+
+            i{
+                background: url('/static/image/add_icon.png') no-repeat;
+                display: inline-block;
+                vertical-align: middle;
+                width: 14px;
+                height: 14px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .staff-container{
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+
+        .staff-left{
+            flex: 1;
+        }
+
+        .staff-right{
+            width: 210px;
+            border-left: 1px solid #dbe1e7;
+            background-color: #f8f8f8;
+
+            .staff-search-container{
+                width: 170px;
+                height: 30px;
+                background-color: #fff;
+                border-radius: 20px;
+                border: 1px solid #dbe1e7;
+                margin: 0 auto;
+                margin-top: 20px;
+                i{
+                    background: url('/static/image/search_icon.png') no-repeat;
+                    display: inline-block;
+                    height: 16px;
+                    width: 21px;
+                    vertical-align: middle;
+                    margin-left: 10px;
+                    border-right: 1px solid #dbe1e7;
+                }
+                input{
+                    border: none;
+                    width: 122px;
+                    height: 30px;
+                    padding: 0;
+                    padding-left: 3px;
+                }
+            }
+
+            .report-tab{
+                width: 100%;
+                margin-top: 13px;
+
+                dl{
+                    border-top: none;
+                    // border-bottom: solid 1px #dbe1e7;
+                    font-size: 14px;
+                }
+
+                dt{
+                    line-height: 40px;
+                    height: 40px;
+                    position: relative;
+
+                    i{
+                        display: block;
+                        border-color: transparent;
+                        position: absolute;
+                        border-style: solid;
+                        border-width: 4px;
+                        border-left-color: #4f5e69;
+                        width: 0;
+                        height: 0;
+                        line-height: 0;
+                        font-size: 0;
+                        top: 16px;
+                        left: 20px;
+                    }
+
+                    span{
+                        display: block;
+                        width: 14px;
+                        position: absolute;
+                        height: 12px;
+                        top: 13px;
+                        left: 32px;
+                        background: url('/static/image/file_icon.png') no-repeat;
+                    }
+
+                    a{
+                        display: block;
+                        text-decoration: none;
+                        padding-left: 55px;
+                        // background-color: #f8f8f8;
+                        font-weight: normal;
+                        color: #4f5e69;
+                        font-size: 12px;
+
+                        &:hover {
+                            background-color: #f0f0f0;
+                        }
+                    }
+
+                    &.list-on i{
+                        top: 18px;
+                        border-color: transparent;
+                        border-style: solid;
+                        border-width: 4px;
+                        border-top-color: #4f5e69;
+                        width: 0;
+                        height: 0;
+                        line-height: 0;
+                        font-size: 0;
+                    }
+                }
+
+                dd{
+                    // background: #f0f0f0;
+                    // border-top: solid 1px #dbe1e7;
+                    // display: block;
+                    display: none;
+
+                    a{
+                        display: block;
+                        color: #4f5e69;
+                        height: 40px;
+                        text-decoration: none;
+                        line-height: 40px;
+                        padding-left: 58px;
+                        font-size: 12px;
+
+                        &:hover{
+                            background-color: #f0f0f0;
+                        }
+                        // border-bottom: 1px solid #dbe1e7;
+                    }
+
+
+                    a.item-on{
+                        color: #fff;
+                        // width: 69%;
+                        border-right: none;
+                        background-color: #4f5e69;
+                        font-weight: normal;
+                    }
+
+
+                }
+
+
+            }
+        }
+    }
+}
+
+.user-group-dialog{
+    margin-top: 30px;
+
+    .flow-form-list{
+        width: 375px;
+        margin: 0 auto;
+    }
+
+    .flow-inline{
+        margin-bottom: 20px;
+        text-align: center;
+
+        &.rili-inline{
+            position: relative;
+            cursor: pointer;
+            .rili-icon{
+                background: url("/static/image/rili_icon.png") no-repeat;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                right: 10px;
+                top: 8px;
+            }
+        }
+
+    }
+
+    label.login-input-icon-1{
+        font-size: 12px;
+        color: #4f5e69;
+        display: inline-block;
+        width: 94px;
+        text-align: right;
+    }
+    .flow-name{
+        border: 1px solid #dbe1e7;
+        text-shadow: none;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        color: #4f5e69;
+        width: 310px;
+        height: 36px;
+        line-height: 36px;
+    }
+
+    .btn-container{
+        margin-top: 30px;
+        text-align: center;
+        margin-bottom: 70px;
+        .login-step{
+            width: 150px;
+            height: 36px;
+            text-align: center;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+        }
+
+        .login-step-1{
+            background: #f7682a;
+            color: #fff;
+        }
+        .login-step-2{
+            background: #c1c8ca;
+            color: #fff;
+            margin-left: 20px;
+        }
+
+    }
+}

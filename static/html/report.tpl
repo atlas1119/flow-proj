@@ -69,7 +69,7 @@
                             <option value="">选择付款方式</option>
                             <option value="棉花">棉花</option>
                             <option value="钢铁">钢铁</option>
-                            <option value="煤炭" selected="">煤炭</option>
+                            <option value="煤炭">煤炭</option>
                           </select>
                     </div>
                     <i class="flow-arrow"></i>
@@ -82,7 +82,7 @@
                             <option value="">选择业务部门</option>
                             <option value="棉花">棉花</option>
                             <option value="钢铁">钢铁</option>
-                            <option value="煤炭" selected="">煤炭</option>
+                            <option value="煤炭">煤炭</option>
                           </select>
                     </div>
                     <i class="flow-arrow"></i>
@@ -95,7 +95,7 @@
                             <option value="">选择贸易方式</option>
                             <option value="棉花">棉花</option>
                             <option value="钢铁">钢铁</option>
-                            <option value="煤炭" selected="">煤炭</option>
+                            <option value="煤炭">煤炭</option>
                           </select>
                     </div>
                     <i class="flow-arrow"></i>
@@ -108,7 +108,7 @@
                             <option value="">选择经手人</option>
                             <option value="棉花">棉花</option>
                             <option value="钢铁">钢铁</option>
-                            <option value="煤炭" selected="">煤炭</option>
+                            <option value="煤炭">煤炭</option>
                           </select>
                     </div>
                     <i class="flow-arrow"></i>
@@ -121,10 +121,15 @@
                             <option value="">选择业务类型</option>
                             <option value="棉花">棉花</option>
                             <option value="钢铁">钢铁</option>
-                            <option value="煤炭" selected="">煤炭</option>
+                            <option value="煤炭">煤炭</option>
                           </select>
                     </div>
                     <i class="flow-arrow"></i>
+                </div>
+
+                <div class="flow-inline btn-container" style="margin-top:0;margin-bottom:0;">
+                    <label class="login-input-icon-1"></label>
+                    <button class="login-step login-step-1" style="background-color:#1abefb;">查询</button>
                 </div>
 
             </div>

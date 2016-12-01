@@ -58,7 +58,7 @@
 
             // 是否有关闭按钮
             if(config.noclose){
-                d.find('.dialog-close').hide();
+                d.find('.dialog-closed').hide();
             }
 
             // dialog中的footer内部按钮

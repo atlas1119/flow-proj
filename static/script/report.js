@@ -10,9 +10,7 @@ $(function(){
         $(this).find("dd").toggle();
     });
 
-    // $('#datepicker1').datepicker();
-    // $('#datepicker2').datepicker();
-    function getDate( element ) {
+    function getDate(element) {
          var date;
          try {
            date = $.datepicker.parseDate( dateFormat, element.value );
@@ -23,15 +21,17 @@ $(function(){
          return date;
    }
 
-    var dateFormat = "yy-mm-dd",
-    from = $( "#datepicker1" )
+   var dateFormat = "yy-mm-dd",
+   from = $( "#datepicker1" )
         .datepicker()
         .on( "change", function() {
           to.datepicker( "option", "minDate", getDate( this ) );
         }),
-    to = $( "#datepicker2" ).datepicker()
+   to = $( "#datepicker2" ).datepicker()
       .on( "change", function() {
         from.datepicker( "option", "maxDate", getDate( this ) );
       });
+
+    
 
 });

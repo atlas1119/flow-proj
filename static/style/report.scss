@@ -5,6 +5,43 @@
 
 .work-container{
     height: 100%;
+
+    .work-sub-tab{
+        padding-left: 0;
+        clear: both;
+        overflow: visible;
+        border-top: none;
+        border-right: none;
+
+        .sub-tab-btn{
+            display: inline-block;
+            float: right;
+            width: 150px;
+            height: 36px;
+            background-color: #f7682a;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 28px;
+            margin-right: 30px;
+            border-radius: 3px;
+            span{
+                color: #fff;
+                display: inline-block;
+                font-size: 14px;
+                height:36px;
+                line-height: 36px;
+            }
+
+            i{
+                background: url('/static/image/add_icon.png') no-repeat;
+                display: inline-block;
+                vertical-align: middle;
+                width: 14px;
+                height: 14px;
+                margin-right: 10px;
+            }
+        }
+    }
 }
 
 .report-container{
