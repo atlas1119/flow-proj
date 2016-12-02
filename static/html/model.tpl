@@ -53,7 +53,7 @@
                     <td>{{item.node_name}}</td>
                     <td>{{item.work.work_name}}</td>
                     <td>{{item.user.name}}</td>
-                    <td><a href="" class="default-btn">修改</a></td>
+                    <td><a href="" class="default-btn">删除</a></td>
                 </tr>
                 {% endfor %}
             </tbody>

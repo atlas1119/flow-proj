@@ -17,24 +17,24 @@
         <div class="report-left">
             <div class="report-tab">
                 <dl>
-                    <dt class="list-on">
+                    <dt>
                         <i></i><a href="#" onclick="return false;">台账</a>
                     </dt>
-                    <dd style="display:block;">
-                        <a href="/prompt/index"  class="item-on">毛利表</a>
-                        <a href="/prompt/index" >毛利表</a>
-                        <a href="/prompt/index" >毛利表</a>
+                    <dd>
+                        <a href="/prompt/index" >船务表</a>
+                        <a href="/prompt/index" >外贸业务表</a>
+                        <!-- <a href="/prompt/index" >毛利表</a> -->
                     </dd>
                 </dl>
 
                 <dl>
-                    <dt>
+                    <dt class="list-on">
                         <i></i><a href="#" onclick="return false;">毛利</a>
                     </dt>
-                    <dd>
-                        <a href="/prompt/index" >毛利表</a>
-                        <a href="/prompt/index" >利润表</a>
-                        <a href="/prompt/index" >占压表</a>
+                    <dd style="display:block;">
+                        <!-- <a href="/prompt/index" >毛利表</a> -->
+                        <a href="/report" class="item-on" >利润表</a>
+                        <!-- <a href="/prompt/index" >占压表</a> -->
                     </dd>
                 </dl>
 
@@ -44,8 +44,8 @@
                     </dt>
                     <dd>
                         <a href="/prompt/index" >仓储表</a>
-                        <a href="/prompt/index" >毛利表</a>
-                        <a href="/prompt/index" >毛利表</a>
+                        <!-- <a href="/prompt/index" >毛利表</a> -->
+                        <!-- <a href="/prompt/index" >毛利表</a> -->
                     </dd>
                 </dl>
 
@@ -135,7 +135,7 @@
             </div>
 
             <div class="work-table-container">
-                {%if flows.length == 0 %}
+                {%if profits.length == 0 %}
                 <div class="no-data-container">
                     <i></i><span>暂无数据</span>
                 </div>
@@ -143,23 +143,44 @@
                 <table class="work-table">
                     <thead>
                         <tr>
-                            <th>业务流名称</th>
-                            <th>状态</th>
-                            <th>操作</th>
+                            <th>发运吨位</th>
+                            <th>不含税收入</th>
+                            <th>不含税成本</th>
+                            <th>税金及附加</th>
+                            <th>销售费用</th>
+                            <th>管理费用</th>
+                            <th>财务费用</th>
+                            <th>过量留差价</th>
+                            <th>净利</th>
+                            <th>毛利</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for item in flows %}
+                        {% for item in profits %}
                         <tr>
-                            <td>{{item.flow_name}}</td>
-                            <td>{%if item.flow_state == 1 %}审核完成{%elif item.flow_state == 2 %}<span>审核未通过，请进行修改</span>{%else%}审核中{%endif%}</td>
-                            <td>{%if item.flow_state == 2 %}<a href="" class="default-btn right">快速修改</a>{%endif%}<a href="/flow/detail?id={{item._id}}" class="default-btn">查看详情</a></td>
+                            <td>{{item.shiping_ton}}</td>
+                            <td>{{item.balance_ton}}</td>
+                            <td>{{item.not_tax_income}}</td>
+                            <td>{{item.not_tax_cost}}</td>
+                            <td>{{item.taxes_add}}</td>
+                            <td>{{item.market_cost}}</td>
+                            <td>{{item.manage_cost}}</td>
+                            <td>{{item.finance_cost}}</td>
+                            <td>{{item.gap_cost}}</td>
+                            <td>{{item.net_profit}}</td>
+                            <td>{{item.gross_profit}}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
                 {%endif%}
             </div>
+            {%if profits.length != 0 %}
+            <div class="flow-inline btn-container" style="margin-top:0px;margin-right:40px;margin-bottom:0;float:right;">
+                <label class="login-input-icon-1"></label>
+                <a class="login-step login-step-1" href="/report/detail" style="background-color:#1abefb;text-decoration:none;line-height:36px;">查看详情</a>
+            </div>
+            {%endif%}
         </div>
     </div>
 

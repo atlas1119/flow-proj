@@ -580,6 +580,10 @@
         REQUIRED: 'required',
         ADMIN_ONLY: 'admin_only',
         VALUE: 'field_options.value',
+        PLACEHOLDER: 'field_options.placeholder',
+        PLACEHOLDER1: 'field_options.placeholder1',
+        RATE: 'field_options.rate',
+        VALUE1: 'field_options.value1',
         OPTIONS: 'field_options.options',
         DESCRIPTION: 'field_options.description',
         INCLUDE_OTHER: 'field_options.include_other_option',
@@ -722,11 +726,6 @@
 // }).call(this);
 
 (function() {
-
-
-}).call(this);
-
-(function() {
   Formbuilder.registerField('number', {
     order: 30,
     view: "<input type='text' value='<%= rf.get(Formbuilder.options.mappings.VALUE) %>'/>\n<% if (units = rf.get(Formbuilder.options.mappings.UNITS)) { %>\n  <%= units %>\n<% } %>",
@@ -739,7 +738,7 @@
 (function() {
   Formbuilder.registerField('paragraph', {
     order: 5,
-    view: "<textarea class='rf-size-<%= rf.get(Formbuilder.options.mappings.SIZE) %>'></textarea>",
+    view: "<textarea placeholder='<%= rf.get(Formbuilder.options.mappings.PLACEHOLDER) %>' class='rf-size-<%= rf.get(Formbuilder.options.mappings.SIZE) %>'></textarea>",
     edit: "<%= Formbuilder.templates['edit/label_value']() %>\n<%= Formbuilder.templates['edit/size']() %>\n<%= Formbuilder.templates['edit/min_max_length']() %>",
     addButton: "<span class=\"symbol\">&#182;</span> 段落",
     defaultAttributes: function(attrs) {
@@ -796,11 +795,73 @@
 (function() {
   Formbuilder.registerField('text', {
     order: 0,
-    view: "<input type='text' class='rf-size-<%= rf.get(Formbuilder.options.mappings.SIZE) %>' value='<%= rf.get(Formbuilder.options.mappings.VALUE) %>' />",
+    view: "<input type='text' placeholder='<%= rf.get(Formbuilder.options.mappings.PLACEHOLDER) %>' class='rf-size-<%= rf.get(Formbuilder.options.mappings.SIZE) %>' value='<%= rf.get(Formbuilder.options.mappings.VALUE) %>' />",
     edit: "<%= Formbuilder.templates['edit/label_value']() %>\n<%= Formbuilder.templates['edit/size']() %>\n<%= Formbuilder.templates['edit/min_max_length']() %>",
     addButton: "<span class='symbol'><span class='fa fa-font'></span></span> 文本框",
     defaultAttributes: function(attrs) {
       attrs.field_options.size = 'small';
+      return attrs;
+    }
+  });
+
+}).call(this);
+
+
+(function() {
+  Formbuilder.registerField('doubletext', {
+    order: 0,
+    view: "<input type='text' placeholder='<%= rf.get(Formbuilder.options.mappings.PLACEHOLDER) %>' class='value rf-size-<%= rf.get(Formbuilder.options.mappings.SIZE) %>' value='<%= rf.get(Formbuilder.options.mappings.VALUE) %>' /> <input type='text' placeholder='<%= rf.get(Formbuilder.options.mappings.PLACEHOLDER1) %>' class='value1 rf-size-<%= rf.get(Formbuilder.options.mappings.SIZE) %>' value='<%= rf.get(Formbuilder.options.mappings.VALUE1) %>' />",
+    edit: "<%= Formbuilder.templates['edit/label_double_value']() %>\n<%= Formbuilder.templates['edit/size']() %>\n<%= Formbuilder.templates['edit/min_max_length']() %>",
+    addButton: "<span class='symbol'><span class='fa fa-font'></span></span> 双文本框",
+    defaultAttributes: function(attrs) {
+      attrs.field_options.size = 'small';
+      return attrs;
+    }
+  });
+
+}).call(this);
+
+(function() {
+  Formbuilder.registerField('textdropdown', {
+    order: 0,
+    view: "<input type='text' placeholder='<%= rf.get(Formbuilder.options.mappings.PLACEHOLDER) %>' class='rf-size-<%= rf.get(Formbuilder.options.mappings.SIZE) %>' value='<%= rf.get(Formbuilder.options.mappings.VALUE) %>' /> <select>\n  <% if (rf.get(Formbuilder.options.mappings.INCLUDE_BLANK)) { %>\n    <option value=''></option>\n  <% } %>\n\n  <% for (i in (rf.get(Formbuilder.options.mappings.OPTIONS) || [])) { %>\n    <option <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].checked && 'selected' %>>\n      <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].label %>\n    </option>\n  <% } %>\n</select>",
+    edit: "<%= Formbuilder.templates['edit/label_value']() %>\n<%= Formbuilder.templates['edit/size']() %>\n<%= Formbuilder.templates['edit/min_max_length']() %><%= Formbuilder.templates['edit/options']({ includeBlank: true }) %>",
+    addButton: "<span class='symbol'><span class='fa fa-font'></span></span> 文本下拉框",
+    defaultAttributes: function(attrs) {
+      attrs.field_options.size = 'small';
+      attrs.field_options.options = [
+        {
+          label: "",
+          checked: false
+        }, {
+          label: "",
+          checked: false
+        }
+      ];
+      return attrs;
+    }
+  });
+
+}).call(this);
+
+// 针对业务做的一个特殊控件，（很垃圾代码）
+(function() {
+  Formbuilder.registerField('textdropdown_cost', {
+    order: 0,
+    view: "<input type='text' class='cost' placeholder='<%= rf.get(Formbuilder.options.mappings.PLACEHOLDER) %>' class='rf-size-<%= rf.get(Formbuilder.options.mappings.SIZE) %>' value='<%= rf.get(Formbuilder.options.mappings.VALUE) %>' /> <select>\n  <% if (rf.get(Formbuilder.options.mappings.INCLUDE_BLANK)) { %>\n    <option value=''></option>\n  <% } %>\n\n  <% for (i in (rf.get(Formbuilder.options.mappings.OPTIONS) || [])) { %>\n    <option <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].checked && 'selected' %>>\n      <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].label %>\n    </option>\n  <% } %>\n</select><span style='margin-left:20px;'>汇率：</span><input type='text' placeholder='可不填' class='rate' style='width:100px;' value='<%= rf.get(Formbuilder.options.mappings.RATE) %>'/>",
+    edit: "<%= Formbuilder.templates['edit/label_rate_value']() %>\n<%= Formbuilder.templates['edit/size']() %>\n<%= Formbuilder.templates['edit/min_max_length']() %><%= Formbuilder.templates['edit/options']({ includeBlank: true }) %>",
+    addButton: "<span class='symbol'><span class='fa fa-font'></span></span> 单价框",
+    defaultAttributes: function(attrs) {
+      attrs.field_options.size = 'small';
+      attrs.field_options.options = [
+        {
+          label: "人民币CNY",
+          checked: false
+        }, {
+          label: "美元USD",
+          checked: false
+        }
+      ];
       return attrs;
     }
   });
@@ -932,6 +993,42 @@ var __t, __p = '', __e = _.escape;
 with (obj) {
 __p += '<div class=\'fb-edit-section-header\'>文本值</div>\n<input type=\'text\' data-rv-input=\'model.' +
 ((__t = ( Formbuilder.options.mappings.VALUE )) == null ? '' : __t) +
+'\' /><div class=\'fb-edit-section-header\'>提示文本值</div>\n<input type=\'text\' data-rv-input=\'model.' +
+((__t = ( Formbuilder.options.mappings.PLACEHOLDER )) == null ? '' : __t) +
+'\' />';
+
+}
+return __p
+};
+
+this["Formbuilder"]["templates"]["edit/label_rate_value"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '<div class=\'fb-edit-section-header\'>文本值</div>\n<input type=\'text\' data-rv-input=\'model.' +
+((__t = ( Formbuilder.options.mappings.VALUE )) == null ? '' : __t) +
+'\' /><div class=\'fb-edit-section-header\'>提示文本值</div>\n<input type=\'text\' data-rv-input=\'model.' +
+((__t = ( Formbuilder.options.mappings.PLACEHOLDER )) == null ? '' : __t) +
+'\' /><div class=\'fb-edit-section-header\'>汇率</div>\n<input type=\'text\' data-rv-input=\'model.' +
+((__t = ( Formbuilder.options.mappings.RATE )) == null ? '' : __t) +
+'\' />';
+
+}
+return __p
+};
+
+this["Formbuilder"]["templates"]["edit/label_double_value"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '<div class=\'fb-edit-section-header\'>文本值</div>\n<input type=\'text\' data-rv-input=\'model.' +
+((__t = ( Formbuilder.options.mappings.VALUE )) == null ? '' : __t) +
+'\' />\n<input type=\'text\' data-rv-input=\'model.' +
+((__t = ( Formbuilder.options.mappings.VALUE1 )) == null ? '' : __t) +
+'\' /><div class=\'fb-edit-section-header\'>提示文本值</div>\n<input type=\'text\' data-rv-input=\'model.' +
+((__t = ( Formbuilder.options.mappings.PLACEHOLDER )) == null ? '' : __t) +
+'\' /><input type=\'text\' data-rv-input=\'model.' +
+((__t = ( Formbuilder.options.mappings.PLACEHOLDER1 )) == null ? '' : __t) +
 '\' />';
 
 }

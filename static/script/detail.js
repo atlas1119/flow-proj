@@ -27,6 +27,30 @@ $(function(){
                             bootData.fields[i].field_options.value = $(item).find("input").val();
                         }
                     }
+                }else if(type == 'doubletext'){
+                    for (var i = 0; i < bootData.fields.length; i++) {
+                        if(bootData.fields[i].field_type == type){
+                            bootData.fields[i].field_options.value = $(item).find("input.value").val();
+                            bootData.fields[i].field_options.value1 = $(item).find("input.value1").val();
+                        }
+                    }
+                }else if(type == 'textdropdown'){
+                    for (var i = 0; i < bootData.fields.length; i++) {
+                        if(bootData.fields[i].field_type == type){
+                            bootData.fields[i].field_options.value = $(item).find("input").val();
+                            var options = bootData.fields[i].field_options.options;
+                            for (var j = 0; j < options; j++) {
+                                options[j].checked = $(item).find("option").get(j).selected;
+                            }
+                        }
+                    }
+                }else if(type == 'textdropdown_cost'){
+                    for (var i = 0; i < bootData.fields.length; i++) {
+                        if(bootData.fields[i].field_type == type){
+                            bootData.fields[i].field_options.rate = $(item).find("input.rate").val();
+                            bootData.fields[i].field_options.value = $(item).find("input.cost").val();
+                        }
+                    }
                 }else{
                     for (var i = 0; i < bootData.fields.length; i++) {
                         if(bootData.fields[i].field_type == type){

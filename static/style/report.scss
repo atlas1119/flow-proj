@@ -281,6 +281,30 @@
     }
 }
 
+.btn-container{
+    margin-top: 30px;
+    // text-align: center;
+    margin-bottom: 32px;
+    .login-step{
+        width: 150px;
+        height: 36px;
+        text-align: center;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+    }
+
+    .login-step-1{
+        background: #f7682a;
+        color: #fff;
+    }
+    .login-step-2{
+        background: #c1c8ca;
+        color: #fff;
+        margin-left: 20px;
+    }
+
+}
 
 .report-tab{
 
