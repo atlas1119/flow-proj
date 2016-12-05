@@ -1,6 +1,6 @@
 {% extends "layout.tpl" %}
 
-{% block title%}瑞茂通核算系统 – 登陆{% endblock %}
+{% block title%}瑞茂通核算系统 – 登录{% endblock %}
 {% block keywords%}瑞茂通,核算{% endblock %}
 {% block description%}{% endblock %}
 
@@ -13,8 +13,8 @@
     <h3 class="login-logo"></h3>
     <div class="login-segment">
         <div class="login-form">
-              <h3 class="login-title">用户登陆</h3>
-              <h6 class="login-sub-title">登陆名：</h6>
+              <h3 class="login-title">用户登录</h3>
+              <h6 class="login-sub-title">登录名：</h6>
               <div class="input input-name">
                 <i class="mail icon"></i>
                 <input type="text" placeholder="请输入登陆名" name="name">

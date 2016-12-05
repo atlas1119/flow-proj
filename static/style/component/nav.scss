@@ -24,6 +24,8 @@
 
     .nav-header-right{
         float: right;
+        position: relative;
+
         .header-name{
             display: inline-block;
             // line-height: 34px;
@@ -64,6 +66,75 @@
             border-left: 3px solid transparent;
             border-right: 3px solid transparent;
             border-top:6px solid #fff;
+        }
+
+        .nav-tips-container{
+            background: url('/static/image/tip_bg_icon.png') no-repeat;
+            display:none;
+            width: 160px;
+            height: 94px;
+            position: absolute;
+
+            left: 0px;
+            top: 51px;
+
+            .setting{
+                height: 45px;
+                line-height: 45px;
+                margin-left: 13px;
+
+                a{
+                    color: #fff;
+                    font-size: 14px;
+                    text-decoration: none;
+                    display: block;
+
+                    &:hover{
+                        color: #1abefb;
+                    }
+                }
+                
+                i{
+                    background: url('/static/image/left_logout_setting_icon.png') no-repeat;
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    vertical-align: middle;
+                    margin-right: 7px;
+                }
+
+                color: #fff;
+                font-size: 14px;
+            }
+
+            .logout{
+                height: 45px;
+                line-height: 45px;
+                margin-left: 13px;
+
+                a{
+                    color: #fff;
+                    font-size: 14px;
+                    text-decoration: none;
+                    display: block;
+
+                    &:hover{
+                        color: #1abefb;
+                    }
+                }
+
+                i{
+                    background: url('/static/image/left_logout_icon.png') no-repeat;
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    vertical-align: middle;
+                    margin-right: 7px;
+                }
+
+
+            }
+
         }
 
     }

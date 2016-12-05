@@ -7,13 +7,18 @@
       "uri": "components/nav/nav.tpl",
       "type": "tpl",
       "deps": [
-        "components/nav/nav.css"
+        "components/nav/nav.css",
+        "components/nav/nav.js"
       ]
    },
    "components/nav/nav.css": {
       "uri": "/static/style/component/nav.css",
       "type": "css"
-   }
+  },
+  "components/nav/nav.js": {
+     "uri": "/static/script/component/nav.js",
+     "type": "js"
+  }
 
   }
 }

@@ -11,6 +11,10 @@
                     <span class="header-text">{{ session.user.name }}&nbsp;&nbsp;&nbsp;{{ session.user.department }}</span>
                     <i class="header-tip"></i>
                 </a>
+                <ul class="nav-tips-container">
+                    <li class="setting"><a href="#"><i></i> 设置密码</a></li>
+                    <li class="logout"><a href="/logout"><i></i> 登出</a></li>
+                </ul>
             </div>
         {% else %}
             <div class="nav-header-right">
