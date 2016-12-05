@@ -50,6 +50,33 @@
             .node-item{
                 // border: 1px solid #dbe1e7;
                 position: relative;
+                height: 140px;
+                overflow: hidden;
+            }
+
+            .node-click{
+                color: #4f5e69;
+                font-size: 12px;
+                text-align: center;
+                height: 30px;
+                line-height: 30px;
+                cursor: pointer;
+                margin-bottom: 20px;
+                i{
+                    width: 10px;
+                    height: 6px;
+                    vertical-align: middle;
+                    margin-left: 5px;
+                    display: inline-block;
+                    background: url('/static/image/down_arrow.png') no-repeat;
+                }
+
+                &.show{
+                    i{
+                        background: url('/static/image/up_arrow.png') no-repeat;
+                    }
+                }
+
             }
         }
 
@@ -372,4 +399,11 @@
         }
 
     }
+}
+
+.fb-field-wrapper{
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+    margin-top: 20px;
 }

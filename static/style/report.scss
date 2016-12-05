@@ -167,6 +167,12 @@
             margin-top: 30px;
             padding-left: 30px;
 
+            &.fliter-list{
+                .flow-inline{
+                    margin-right: 66px;
+                }
+            }
+
             .flow-form-list{
                 width: 375px;
                 margin: 0 auto;
@@ -197,7 +203,7 @@
                 font-size: 12px;
                 color: #4f5e69;
                 display: inline-block;
-                width: 62px;
+                width: 93px;
                 text-align: right;
             }
 

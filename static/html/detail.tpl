@@ -24,7 +24,7 @@
         <div class="detail-flow-info">
             <div class="node-inline">
                 <label class="login-input-icon-1">事业部：</label>
-                <label class="login-input-icon-1"></label>
+                <label class="login-input-icon-1">{{session.user.department}}</label>
             </div>
             <div class="node-inline">
                 <label class="login-input-icon-1">事业部：</label>
@@ -76,7 +76,7 @@
         <div class="detail-flow-info">
             <div class="node-inline">
                 <label class="login-input-icon-1">事业部：</label>
-                <label class="login-input-icon-1"></label>
+                <label class="login-input-icon-1">{{session.user.department}}</label>
             </div>
             <div class="node-inline">
                 <label class="login-input-icon-1">事业部：</label>
@@ -88,7 +88,7 @@
             </div>
         </div>
         <div class="detail-node-list">
-            
+
         </div>
         {%if flow.flow_state != 1%}
         <div class="detail-node-form">

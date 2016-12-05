@@ -53,49 +53,62 @@
         </div>
 
         <div class="report-right">
-            <div class="fliter-container">
+            <div class="fliter-container fliter-list">
                 <div class="flow-inline rili-inline">
                     <label class="login-input-icon-1">结算时间：</label>
-                    <input id="datepicker1" type="text" placeholder="" class="flow-name input-time" autocomplete="off" readonly>
+                    <input id="datepicker1" type="text" placeholder="" class="flow-name input-time" autocomplete="off" value="{{moment(param.balance_date.$gte).format("YYYY-MM-DD") if param.balance_date.$gte else ''}}" readonly>
                     <i class="rili-icon" style="right:182px;"></i>
                     <label class="login-input-icon-1" style="text-align:center;width:24px;">至</label>
-                    <input id="datepicker2" type="text" placeholder="" class="flow-name input-time" autocomplete="off" readonly>
+                    <input id="datepicker2" type="text" placeholder="" class="flow-name input-time" autocomplete="off" value="{{moment(param.balance_date.$lt).format("YYYY-MM-DD") if param.balance_date.$lt else ''}}" readonly>
                     <i class="rili-icon"></i>
                 </div>
                 <div class="flow-inline">
-                    <label class="login-input-icon-1">付款方式：</label>
+                    <label class="login-input-icon-1">船名：</label>
                     <div class="select">
-                          <select name="make">
-                            <option value="">选择付款方式</option>
-                            <option value="棉花">棉花</option>
-                            <option value="钢铁">钢铁</option>
-                            <option value="煤炭">煤炭</option>
+                          <select name="make" id="shipName">
+                            <option value="">选择船名</option>
+                            {% for item in profits %}
+                            <option value="{{item.ship_name}}" {{"selected='selected'" if param.ship_name==item.ship_name else ''}}>{{item.ship_name}}</option>
+                            {%endfor%}
                           </select>
                     </div>
                     <i class="flow-arrow"></i>
                 </div>
 
                 <div class="flow-inline">
-                    <label class="login-input-icon-1">业务部门：</label>
+                    <label class="login-input-icon-1">销售部门：</label>
                     <div class="select">
-                          <select name="make">
-                            <option value="">选择业务部门</option>
-                            <option value="棉花">棉花</option>
-                            <option value="钢铁">钢铁</option>
-                            <option value="煤炭">煤炭</option>
+                          <select name="make" id="xiaoshouDp">
+                            <option value="">选择销售部门</option>
+                            {% for item in profits %}
+                            <option value="{{item.xiaoshou_department}}" {{"selected='selected'" if param.xiaoshou_department==item.xiaoshou_department else ''}}>{{item.xiaoshou_department}}</option>
+                            {%endfor%}
                           </select>
                     </div>
                     <i class="flow-arrow"></i>
                 </div>
 
                 <div class="flow-inline">
-                    <label class="login-input-icon-1">贸易方式：</label>
+                    <label class="login-input-icon-1">上游供应商：</label>
                     <div class="select">
-                          <select name="make">
-                            <option value="">选择贸易方式</option>
-                            <option value="棉花">棉花</option>
-                            <option value="钢铁">钢铁</option>
-                            <option value="煤炭">煤炭</option>
+                          <select name="make" id="upProvider">
+                            <option value="">选择上游供应商</option>
+                            {% for item in profits %}
+                            <option value="{{item.up_provider}}" {{"selected='selected'" if param.xiaoshou_department==item.xiaoshou_department else ''}}">{{item.up_provider}}</option>
+                            {%endfor%}
+                          </select>
+                    </div>
+                    <i class="flow-arrow"></i>
+                </div>
+
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">下游销售客户：</label>
+                    <div class="select">
+                          <select name="make" id="downPerson">
+                            <option value="">选择下游销售客户</option>
+                            {% for item in profits %}
+                            <option value="{{item.down_xiaoshou_person}}" {{"selected='selected'" if param.down_xiaoshou_person==item.down_xiaoshou_person else ''}}>{{item.down_xiaoshou_person}}</option>
+                            {%endfor%}
                           </select>
                     </div>
                     <i class="flow-arrow"></i>
@@ -104,11 +117,11 @@
                 <div class="flow-inline">
                     <label class="login-input-icon-1">经手人：</label>
                     <div class="select">
-                          <select name="make">
+                          <select name="make" id="workerName">
                             <option value="">选择经手人</option>
-                            <option value="棉花">棉花</option>
-                            <option value="钢铁">钢铁</option>
-                            <option value="煤炭">煤炭</option>
+                            {% for item in profits %}
+                            <option value="{{item.worker_name}}" {{"selected='selected'" if param.worker_name==item.worker_name else ''}}">{{item.worker_name}}</option>
+                            {%endfor%}
                           </select>
                     </div>
                     <i class="flow-arrow"></i>
@@ -117,11 +130,11 @@
                 <div class="flow-inline">
                     <label class="login-input-icon-1">业务类型：</label>
                     <div class="select">
-                          <select name="make">
+                          <select name="make" id="workType">
                             <option value="">选择业务类型</option>
-                            <option value="棉花">棉花</option>
-                            <option value="钢铁">钢铁</option>
-                            <option value="煤炭">煤炭</option>
+                            {% for item in profits %}
+                            <option value="{{item.work_type}}" {{"selected='selected'" if param.work_type==item.work_type else ''}}">{{item.work_type}}</option>
+                            {%endfor%}
                           </select>
                     </div>
                     <i class="flow-arrow"></i>
@@ -129,7 +142,7 @@
 
                 <div class="flow-inline btn-container" style="margin-top:0;margin-bottom:0;">
                     <label class="login-input-icon-1"></label>
-                    <button class="login-step login-step-1" style="background-color:#1abefb;">查询</button>
+                    <button class="login-step login-step-1 search-btn" style="background-color:#1abefb;">查询</button>
                 </div>
 
             </div>
@@ -176,7 +189,7 @@
                 </table>
                 {%endif%}
             </div>
-            {%if profits.length != 0 %}
+            {%if profitdata.length != 0 %}
             <div class="flow-inline btn-container" style="margin-top:0px;margin-right:40px;margin-bottom:0;float:right;">
                 <label class="login-input-icon-1"></label>
                 <a class="login-step login-step-1" href="/report/detail" style="background-color:#1abefb;text-decoration:none;line-height:36px;">查看详情</a>
