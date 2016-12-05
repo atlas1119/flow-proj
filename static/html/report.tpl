@@ -135,7 +135,7 @@
             </div>
 
             <div class="work-table-container">
-                {%if profits.length == 0 %}
+                {%if profitdata.length == 0 %}
                 <div class="no-data-container">
                     <i></i><span>暂无数据</span>
                 </div>
@@ -144,6 +144,7 @@
                     <thead>
                         <tr>
                             <th>发运吨位</th>
+                            <th>结算吨位</th>
                             <th>不含税收入</th>
                             <th>不含税成本</th>
                             <th>税金及附加</th>
@@ -156,7 +157,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for item in profits %}
+                        {% for item in profitdata %}
                         <tr>
                             <td>{{item.shiping_ton}}</td>
                             <td>{{item.balance_ton}}</td>

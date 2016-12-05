@@ -178,6 +178,8 @@
                             <td>{{item.work_line}}</td>
                             <td>{{item.up_balance_ton}}</td>
                             <td>{{item.up_balance_zhi}}</td>
+                            <td>{{item.down_balance_ton}}</td>
+                            <td>{{item.down_balance_zhi}}</td>
                             <td>{{item.chao_ton}}</td>
                             <td>{{item.chao_card}}</td>
                             <td>{{item.net_profit}}</td>
