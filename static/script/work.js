@@ -91,7 +91,14 @@ $(function(){
                     selectType(dialog.find('.flow-type-list li'),dialog);
                 });
                 dialog.find("#showNodeInput").click(function(){
-                    dialog.find(".input-node").toggle();
+                    if(dialog.find(".input-node").attr("data-show") != "1"){
+                        dialog.find(".input-node").css({"display":"inline-block"});
+                        dialog.find(".input-node").attr("data-show","1");
+                    }else{
+                        dialog.find(".input-node").css({"display":"none"});
+                        dialog.find(".input-node").attr("data-show","0");
+                    }
+
                 });
 
                 dialog.find(".input-node .right").click(function(){

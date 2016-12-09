@@ -297,6 +297,10 @@
 
             .input-node{
                 display: inline-block;
+                
+                &.none{
+                    display: none;
+                }
 
                 input{
                     border: 1px solid #dbe1e7;
