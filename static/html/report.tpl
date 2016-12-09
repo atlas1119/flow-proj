@@ -66,7 +66,7 @@
                     <label class="login-input-icon-1">船名：</label>
                     <div class="select">
                           <select name="make" id="shipName">
-                            <option value="">选择船名</option>
+                            <option value="">全部</option>
                             {% for item in profits %}
                             <option value="{{item.ship_name}}" {{"selected='selected'" if param.ship_name==item.ship_name else ''}}>{{item.ship_name}}</option>
                             {%endfor%}
@@ -79,7 +79,7 @@
                     <label class="login-input-icon-1">销售部门：</label>
                     <div class="select">
                           <select name="make" id="xiaoshouDp">
-                            <option value="">选择销售部门</option>
+                            <option value="">全部</option>
                             {% for item in profits %}
                             <option value="{{item.xiaoshou_department}}" {{"selected='selected'" if param.xiaoshou_department==item.xiaoshou_department else ''}}>{{item.xiaoshou_department}}</option>
                             {%endfor%}
@@ -92,7 +92,7 @@
                     <label class="login-input-icon-1">上游供应商：</label>
                     <div class="select">
                           <select name="make" id="upProvider">
-                            <option value="">选择上游供应商</option>
+                            <option value="">全部</option>
                             {% for item in profits %}
                             <option value="{{item.up_provider}}" {{"selected='selected'" if param.xiaoshou_department==item.xiaoshou_department else ''}}">{{item.up_provider}}</option>
                             {%endfor%}
@@ -105,7 +105,7 @@
                     <label class="login-input-icon-1">下游销售客户：</label>
                     <div class="select">
                           <select name="make" id="downPerson">
-                            <option value="">选择下游销售客户</option>
+                            <option value="">全部</option>
                             {% for item in profits %}
                             <option value="{{item.down_xiaoshou_person}}" {{"selected='selected'" if param.down_xiaoshou_person==item.down_xiaoshou_person else ''}}>{{item.down_xiaoshou_person}}</option>
                             {%endfor%}
@@ -118,7 +118,7 @@
                     <label class="login-input-icon-1">经手人：</label>
                     <div class="select">
                           <select name="make" id="workerName">
-                            <option value="">选择经手人</option>
+                            <option value="">全部</option>
                             {% for item in profits %}
                             <option value="{{item.worker_name}}" {{"selected='selected'" if param.worker_name==item.worker_name else ''}}">{{item.worker_name}}</option>
                             {%endfor%}
@@ -131,7 +131,7 @@
                     <label class="login-input-icon-1">业务类型：</label>
                     <div class="select">
                           <select name="make" id="workType">
-                            <option value="">选择业务类型</option>
+                            <option value="">全部</option>
                             {% for item in profits %}
                             <option value="{{item.work_type}}" {{"selected='selected'" if param.work_type==item.work_type else ''}}">{{item.work_type}}</option>
                             {%endfor%}
