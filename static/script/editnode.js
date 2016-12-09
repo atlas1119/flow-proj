@@ -11,7 +11,9 @@ $(function(){
     // fb.mainView.lockLeftWrapper();
     // fb.mainView.$fbLeft.hide();
     // fb.mainView.saveFormButton.hide();
-    $("#formMain").find(".cover").hide();
+    if(window.edit != '0'){
+        $("#formMain").find(".cover").hide();
+    }
     // container.parent().css({'margin-left':'0','padding-top':'0','border-left':'none','padding-left':0,'min-height': 'auto'})
     $("#formMain").find(".actions-wrapper").hide();
 

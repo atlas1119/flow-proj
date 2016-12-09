@@ -133,25 +133,30 @@ $(function(){
             var htmlbtn = ['<div class="detail-btn-list">',
                             // '<button class="detail-btn">查看历史变动</button>',
                             (nodes[i].review_state != 1?'<a class="detail-btn" href="/flow/editnode?id='+nodes[i]._id+'">编辑</a>':''),
-                            // '<a class="detail-btn">提交</a>',
+                            '<a class="detail-btn" href="/flow/editnode?id='+nodes[i]._id+'&edit=0">查看</a>',
                             (window.user_id == nodes[i].node_reviewer_id.toString() && nodes[i].review_state != 1?'<a class="detail-btn verify-person" href="javascript:void(0);" data-index="'+ i +'" data-node-id="'+ nodes[i]._id +'">审核</a>':''),
                         '</div>'].join('');
 
-            $(".detail-node-list").append("<div class='node-content'><h6 class='node-title'><span class='left'>"+nodes[i].node_name+"</span><span class='right'>"+nodes[i].created_at.split("T")[0]+"创建</span></h6><div class='node-item' id='node"+ i +"'></div><div class='node-click' data-index='"+i+"'>点击查看详情<i></i></div>"+htmlbtn+"</div>")
-            var fb = new Formbuilder({
-                selector: '#node'+i,
-                bootstrapData: bootData.fields
-            });
-            var container = fb.mainView.$responseFields;
-            $('#node'+i).html(container.html());
-            // fb.mainView.lockLeftWrapper();
-            // fb.mainView.$fbLeft.hide();
-            // fb.mainView.saveFormButton.hide();
-            // $("#formMain").find(".cover").hide();
-            // container.parent().css({'margin-left':'0','padding-top':'0','border-left':'none','padding-left':0,'min-height': 'auto'})
-            $('#node'+i).find(".actions-wrapper").hide();
+            $(".detail-node-list").append("<span class='node-arrow "+(i==0?"none":"")+"'></span><div class='node-content'><h6 class='node-title'><span class='left'>"+nodes[i].node_name+"</span><span class='right'>"+nodes[i].created_at.split("T")[0]+"创建</span></h6><div class='node-item' id='node"+ i +"'></div>"+htmlbtn+"</div>")
+            // var fb = new Formbuilder({
+            //     selector: '#node'+i,
+            //     bootstrapData: bootData.fields
+            // });
+
+            var h = ["<div>",
+                        "<div class='node-dd'>"+(data.tpls[i] && data.tpls[i].node_name)+"</div>",
+                     "</div>"
+                    ].join("");
+
+            $('#node'+i).html(h);
+
+            // var container = fb.mainView.$responseFields;
+            // $('#node'+i).html(container.html());
+            // $('#node'+i).find(".actions-wrapper").hide();
 
         }
+
+        $(".detail-node-list").append("<span class='node-arrow'></span><div class='node-content add-content' id='detailAddNode'><h6 class='node-title'><span class='left'>增加后续节点</span></h6><div class='add-container'><span class='line-1'></span><span class='line-2'></span></div></div>");
 
         $(".node-click").click(function(){
             var index = $(this).attr("data-index");

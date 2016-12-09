@@ -23,17 +23,20 @@
     <div class="detail-content">
         <div class="detail-flow-info">
             <div class="node-inline">
+                <label class="login-input-icon-1">时间：</label>
+                <label class="login-input-icon-1">{{moment(flow.created_at).format("YYYY-MM-DD")}}</label>
+            </div>
+
+            <div class="node-inline">
                 <label class="login-input-icon-1">事业部：</label>
                 <label class="login-input-icon-1">{{session.user.department}}</label>
             </div>
+
             <div class="node-inline">
-                <label class="login-input-icon-1">事业部：</label>
-                <label class="login-input-icon-1"></label>
+                <label class="login-input-icon-1"> 经手人：</label>
+                <label class="login-input-icon-1">{{user_info.name}}</label>
             </div>
-            <div class="node-inline">
-                <label class="login-input-icon-1">事业部：</label>
-                <label class="login-input-icon-1"></label>
-            </div>
+
         </div>
         <div class="detail-form">
             <h6 class="form-title"><i></i>基本信息</h6>
@@ -75,16 +78,18 @@
     <div class="detail-content">
         <div class="detail-flow-info">
             <div class="node-inline">
+                <label class="login-input-icon-1">时间：</label>
+                <label class="login-input-icon-1">{{moment(flow.created_at).format("YYYY-MM-DD")}}</label>
+            </div>
+
+            <div class="node-inline">
                 <label class="login-input-icon-1">事业部：</label>
                 <label class="login-input-icon-1">{{session.user.department}}</label>
             </div>
+
             <div class="node-inline">
-                <label class="login-input-icon-1">事业部：</label>
-                <label class="login-input-icon-1"></label>
-            </div>
-            <div class="node-inline">
-                <label class="login-input-icon-1">事业部：</label>
-                <label class="login-input-icon-1"></label>
+                <label class="login-input-icon-1"> 经手人：</label>
+                <label class="login-input-icon-1">{{user_info.name}}</label>
             </div>
         </div>
         <div class="detail-node-list">
@@ -92,7 +97,7 @@
         </div>
         {%if flow.flow_state != 1%}
         <div class="detail-node-form">
-            <button class="detail-add-btn" id="detailAddNode"><i></i>增加后续节点</button>
+            <!-- <button class="detail-add-btn" id="detailAddNode"><i></i>增加后续节点</button> -->
             <button class="detail-add-btn" id="detailAddChain"><i></i>增加业务链条信息</button>
         </div>
         {%endif%}

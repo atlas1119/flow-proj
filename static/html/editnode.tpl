@@ -47,9 +47,11 @@
                 </div>
             </div>
         </div>
+        {%if edit != 0%}
         <div class="detail-form">
             <button class="detail-save" id="detailSave">保存</button>
         </div>
+        {%endif%}
     </div>
 </div>
 {% endblock %}
@@ -63,6 +65,7 @@
     <script>
         window.node_struct = '{{node.node_struct}}';
         window.node_id = '{{node._id}}';
+        window.edit = '{{edit}}';
         // window.flow_id = "{{flow._id}}";
     </script>
     {%js 'editnode'%}
