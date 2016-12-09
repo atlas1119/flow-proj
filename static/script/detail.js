@@ -51,6 +51,15 @@ $(function(){
                             bootData.fields[i].field_options.value = $(item).find("input.cost").val();
                         }
                     }
+                }else if(type == 'double_text_cost'){
+                    for (var i = 0; i < bootData.fields.length; i++) {
+                        if(bootData.fields[i].field_type == type){
+                            bootData.fields[i].field_options.rate = $(item).find("input.rate").val();
+                            bootData.fields[i].field_options.value = $(item).find("input.cost").val();
+                            bootData.fields[i].field_options.rate1 = $(item).find("input.rate1").val();
+                            bootData.fields[i].field_options.value1 = $(item).find("input.cost1").val();
+                        }
+                    }
                 }else{
                     for (var i = 0; i < bootData.fields.length; i++) {
                         if(bootData.fields[i].field_type == type){

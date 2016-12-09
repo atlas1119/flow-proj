@@ -575,6 +575,7 @@
       mappings: {
         SIZE: 'field_options.size',
         UNITS: 'field_options.units',
+        UNITS1: 'field_options.units1',
         LABEL: 'label',
         FIELD_TYPE: 'field_type',
         REQUIRED: 'required',
@@ -583,11 +584,15 @@
         PLACEHOLDER: 'field_options.placeholder',
         PLACEHOLDER1: 'field_options.placeholder1',
         RATE: 'field_options.rate',
+        RATE1: 'field_options.rate1',
         VALUE1: 'field_options.value1',
         OPTIONS: 'field_options.options',
+        OPTIONS1: 'field_options.options1',
         DESCRIPTION: 'field_options.description',
         INCLUDE_OTHER: 'field_options.include_other_option',
         INCLUDE_BLANK: 'field_options.include_blank_option',
+        INCLUDE_OTHER1: 'field_options.include_other_option1',
+        INCLUDE_BLANK1: 'field_options.include_blank_option1',
         INTEGER_ONLY: 'field_options.integer_only',
         MIN: 'field_options.min',
         MAX: 'field_options.max',
@@ -810,7 +815,7 @@
 (function() {
   Formbuilder.registerField('doubletext', {
     order: 0,
-    view: "<input type='text' placeholder='<%= rf.get(Formbuilder.options.mappings.PLACEHOLDER) %>' class='value rf-size-<%= rf.get(Formbuilder.options.mappings.SIZE) %>' value='<%= rf.get(Formbuilder.options.mappings.VALUE) %>' /> <input type='text' placeholder='<%= rf.get(Formbuilder.options.mappings.PLACEHOLDER1) %>' class='value1 rf-size-<%= rf.get(Formbuilder.options.mappings.SIZE) %>' value='<%= rf.get(Formbuilder.options.mappings.VALUE1) %>' />",
+    view: "<input type='text' placeholder='<%= rf.get(Formbuilder.options.mappings.PLACEHOLDER) %>' class='value rf-size-<%= rf.get(Formbuilder.options.mappings.SIZE) %>' value='<%= rf.get(Formbuilder.options.mappings.VALUE) %>' /><% if (units = rf.get(Formbuilder.options.mappings.UNITS)) { %>\n  <%= units %>\n<% } %>\n\n <br/><input type='text' placeholder='<%= rf.get(Formbuilder.options.mappings.PLACEHOLDER1) %>' class='value1 rf-size-<%= rf.get(Formbuilder.options.mappings.SIZE) %>' value='<%= rf.get(Formbuilder.options.mappings.VALUE1) %>' /><% if (units = rf.get(Formbuilder.options.mappings.UNITS1)) { %>\n  <%= units %>\n<% } %>",
     edit: "<%= Formbuilder.templates['edit/label_double_value']() %>\n<%= Formbuilder.templates['edit/size']() %>\n<%= Formbuilder.templates['edit/min_max_length']() %>",
     addButton: "<span class='symbol'><span class='fa fa-font'></span></span> 双文本框",
     defaultAttributes: function(attrs) {
@@ -854,6 +859,38 @@
     defaultAttributes: function(attrs) {
       attrs.field_options.size = 'small';
       attrs.field_options.options = [
+        {
+          label: "人民币CNY",
+          checked: false
+        }, {
+          label: "美元USD",
+          checked: false
+        }
+      ];
+      return attrs;
+    }
+  });
+
+}).call(this);
+
+(function() {
+  Formbuilder.registerField('double_text_cost', {
+    order: 0,
+    view: "<input type='text' class='cost' placeholder='<%= rf.get(Formbuilder.options.mappings.PLACEHOLDER) %>' class='rf-size-<%= rf.get(Formbuilder.options.mappings.SIZE) %>' value='<%= rf.get(Formbuilder.options.mappings.VALUE) %>' /> <select>\n  <% if (rf.get(Formbuilder.options.mappings.INCLUDE_BLANK)) { %>\n    <option value=''></option>\n  <% } %>\n\n  <% for (i in (rf.get(Formbuilder.options.mappings.OPTIONS) || [])) { %>\n    <option <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].checked && 'selected' %>>\n      <%= rf.get(Formbuilder.options.mappings.OPTIONS)[i].label %>\n    </option>\n  <% } %>\n</select><span style='margin-left:20px;'>汇率：</span><input type='text' placeholder='可不填' class='rate' style='width:100px;' value='<%= rf.get(Formbuilder.options.mappings.RATE) %>'/> <br/> <input type='text' class='cost1' placeholder='<%= rf.get(Formbuilder.options.mappings.PLACEHOLDER1) %>' class='rf-size-<%= rf.get(Formbuilder.options.mappings.SIZE) %>' value='<%= rf.get(Formbuilder.options.mappings.VALUE1) %>' /> <select>\n  <% if (rf.get(Formbuilder.options.mappings.INCLUDE_BLANK1)) { %>\n    <option value=''></option>\n  <% } %>\n\n  <% for (i in (rf.get(Formbuilder.options.mappings.OPTIONS1) || [])) { %>\n    <option <%= rf.get(Formbuilder.options.mappings.OPTIONS1)[i].checked && 'selected' %>>\n      <%= rf.get(Formbuilder.options.mappings.OPTIONS1)[i].label %>\n    </option>\n  <% } %>\n</select><span style='margin-left:20px;'>汇率：</span><input type='text' placeholder='可不填' class='rate1' style='width:100px;' value='<%= rf.get(Formbuilder.options.mappings.RATE1) %>'/>",
+    edit: "<%= Formbuilder.templates['edit/double_label_rate_value']() %>\n<%= Formbuilder.templates['edit/size']() %>\n<%= Formbuilder.templates['edit/double_options']({ includeBlank: true }) %>",
+    addButton: "<span class='symbol'><span class='fa fa-font'></span></span> 双单价框",
+    defaultAttributes: function(attrs) {
+      attrs.field_options.size = 'small';
+      attrs.field_options.options = [
+        {
+          label: "人民币CNY",
+          checked: false
+        }, {
+          label: "美元USD",
+          checked: false
+        }
+      ];
+      attrs.field_options.options1 = [
         {
           label: "人民币CNY",
           checked: false
@@ -1017,6 +1054,28 @@ __p += '<div class=\'fb-edit-section-header\'>文本值</div>\n<input type=\'tex
 return __p
 };
 
+this["Formbuilder"]["templates"]["edit/double_label_rate_value"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '<div class=\'fb-edit-section-header\'>文本值</div>\n<input type=\'text\' data-rv-input=\'model.' +
+((__t = ( Formbuilder.options.mappings.VALUE )) == null ? '' : __t) +
+'\' /><div class=\'fb-edit-section-header\'>提示文本值</div>\n<input type=\'text\' data-rv-input=\'model.' +
+((__t = ( Formbuilder.options.mappings.PLACEHOLDER )) == null ? '' : __t) +
+'\' /><div class=\'fb-edit-section-header\'>汇率</div>\n<input type=\'text\' data-rv-input=\'model.' +
+((__t = ( Formbuilder.options.mappings.RATE )) == null ? '' : __t) +
+'\' /><div class=\'fb-edit-section-header\'>文本值1</div>\n<input type=\'text\' data-rv-input=\'model.' +
+((__t = ( Formbuilder.options.mappings.VALUE1 )) == null ? '' : __t) +
+'\' /><div class=\'fb-edit-section-header\'>提示文本值1</div>\n<input type=\'text\' data-rv-input=\'model.' +
+((__t = ( Formbuilder.options.mappings.PLACEHOLDER1 )) == null ? '' : __t) +
+'\' /><div class=\'fb-edit-section-header\'>汇率1</div>\n<input type=\'text\' data-rv-input=\'model.' +
+((__t = ( Formbuilder.options.mappings.RATE1 )) == null ? '' : __t) +
+'\' />';
+
+}
+return __p
+};
+
 this["Formbuilder"]["templates"]["edit/label_double_value"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
@@ -1029,7 +1088,11 @@ __p += '<div class=\'fb-edit-section-header\'>文本值</div>\n<input type=\'tex
 ((__t = ( Formbuilder.options.mappings.PLACEHOLDER )) == null ? '' : __t) +
 '\' /><input type=\'text\' data-rv-input=\'model.' +
 ((__t = ( Formbuilder.options.mappings.PLACEHOLDER1 )) == null ? '' : __t) +
-'\' />';
+'\' /><div class=\'fb-edit-section-header\'>单位</div>\n<input type="text" data-rv-input="model.' +
+((__t = ( Formbuilder.options.mappings.UNITS )) == null ? '' : __t) +
+'" /><input type="text" data-rv-input="model.' +
+((__t = ( Formbuilder.options.mappings.UNITS1 )) == null ? '' : __t) +
+'" />\n';
 
 }
 return __p
@@ -1100,6 +1163,61 @@ __p += '\n\n<div class=\'option\' data-rv-each-option=\'model.' +
  if (typeof includeOther !== 'undefined'){ ;
 __p += '\n  <label>\n    <input type=\'checkbox\' data-rv-checked=\'model.' +
 ((__t = ( Formbuilder.options.mappings.INCLUDE_OTHER )) == null ? '' : __t) +
+'\' />\n    包含 "其他"\n  </label>\n';
+ } ;
+__p += '\n\n<div class=\'fb-bottom-add\'>\n  <a class="js-add-option ' +
+((__t = ( Formbuilder.options.BUTTON_CLASS )) == null ? '' : __t) +
+'">添加选项</a>\n</div>\n';
+
+}
+return __p
+};
+
+
+this["Formbuilder"]["templates"]["edit/double_options"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+with (obj) {
+__p += '<div class=\'fb-edit-section-header\'>选项</div>\n\n';
+ if (typeof includeBlank !== 'undefined'){ ;
+__p += '\n  <label>\n    <input type=\'checkbox\' data-rv-checked=\'model.' +
+((__t = ( Formbuilder.options.mappings.INCLUDE_BLANK )) == null ? '' : __t) +
+'\' />\n    包含空\n  </label>\n';
+ } ;
+__p += '\n\n<div class=\'option\' data-rv-each-option=\'model.' +
+((__t = ( Formbuilder.options.mappings.OPTIONS )) == null ? '' : __t) +
+'\'>\n  <input type="checkbox" class=\'js-default-updated\' data-rv-checked="option:checked" />\n  <input type="text" data-rv-input="option:label" class=\'option-label-input\' />\n  <a class="js-add-option ' +
+((__t = ( Formbuilder.options.BUTTON_CLASS )) == null ? '' : __t) +
+'" title="Add Option"><i class=\'fa fa-plus-circle\'></i></a>\n  <a class="js-remove-option ' +
+((__t = ( Formbuilder.options.BUTTON_CLASS )) == null ? '' : __t) +
+'" title="Remove Option"><i class=\'fa fa-minus-circle\'></i></a>\n</div>\n\n';
+ if (typeof includeOther !== 'undefined'){ ;
+__p += '\n  <label>\n    <input type=\'checkbox\' data-rv-checked=\'model.' +
+((__t = ( Formbuilder.options.mappings.INCLUDE_OTHER )) == null ? '' : __t) +
+'\' />\n    包含 "其他"\n  </label>\n';
+ } ;
+__p += '\n\n<div class=\'fb-bottom-add\'>\n  <a class="js-add-option ' +
+((__t = ( Formbuilder.options.BUTTON_CLASS )) == null ? '' : __t) +
+'">添加选项</a>\n</div>\n';
+
+
+__p += '<div class=\'fb-edit-section-header\'>选项1</div>\n\n';
+ if (typeof includeBlank !== 'undefined'){ ;
+__p += '\n  <label>\n    <input type=\'checkbox\' data-rv-checked=\'model.' +
+((__t = ( Formbuilder.options.mappings.INCLUDE_BLANK1 )) == null ? '' : __t) +
+'\' />\n    包含空\n  </label>\n';
+ } ;
+__p += '\n\n<div class=\'option\' data-rv-each-option=\'model.' +
+((__t = ( Formbuilder.options.mappings.OPTIONS1 )) == null ? '' : __t) +
+'\'>\n  <input type="checkbox" class=\'js-default-updated\' data-rv-checked="option:checked" />\n  <input type="text" data-rv-input="option:label" class=\'option-label-input\' />\n  <a class="js-add-option ' +
+((__t = ( Formbuilder.options.BUTTON_CLASS )) == null ? '' : __t) +
+'" title="Add Option"><i class=\'fa fa-plus-circle\'></i></a>\n  <a class="js-remove-option ' +
+((__t = ( Formbuilder.options.BUTTON_CLASS )) == null ? '' : __t) +
+'" title="Remove Option"><i class=\'fa fa-minus-circle\'></i></a>\n</div>\n\n';
+ if (typeof includeOther !== 'undefined'){ ;
+__p += '\n  <label>\n    <input type=\'checkbox\' data-rv-checked=\'model.' +
+((__t = ( Formbuilder.options.mappings.INCLUDE_OTHER1 )) == null ? '' : __t) +
 '\' />\n    包含 "其他"\n  </label>\n';
  } ;
 __p += '\n\n<div class=\'fb-bottom-add\'>\n  <a class="js-add-option ' +
