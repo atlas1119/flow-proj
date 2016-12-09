@@ -13,7 +13,7 @@
 
 {% block content %}
 <div class="container">
-    <h3 class="temp-title">创建模板&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名称：<input type="text" style="border:1px solid #dbe1e7;" id="tempName"/></h3>
+    <h3 class="temp-title">创建模板&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名称：<input type="text" style="border:1px solid #dbe1e7;" id="tempName" value="{{tplNode.node_name}}"/></h3>
 
     <div class="fb-container" id="fbMain">
 
@@ -28,8 +28,9 @@
     {%js 'formbuilder'%}
     {%js 'jquery_zr_extension' %}
     <script>
-        window.work_node_id = "{{work_node_id}}";
-        window.referUrl = "{{referUrl}}";
+        window.work_node_id = "{{tplNode.work_node_id}}";
+        window.node_struct = "{{tplNode.node_struct}}";
+        window._id = "{{tplNode._id}}";
     </script>
-    {%js 'create_template'%}
+    {%js 'edit_template'%}
 {% endblock %}
