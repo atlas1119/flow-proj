@@ -65,6 +65,7 @@ $(function(){
             });
 
             var postData = {
+                fid: window.flow_id,
                 node_struct: JSON.stringify(bootData),
                 node_reviewer: $("#reviewerId").val(),
                 node_reviewer_id: $("#reviewerId").attr("data-user-id"),
