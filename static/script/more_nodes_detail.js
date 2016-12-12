@@ -127,7 +127,6 @@ $(function(){
         var nodes = data.nodes;
         for (var i = 0; i < nodes.length; i++) {
 
-            // console.log("###cur",window.user_id,"$$$$",nodes[i].node_reviewer_id.toString() ,window.user_id == nodes[i].node_reviewer_id.toString());
             var jsonS = nodes[i].node_struct;
             var bootData = JSON.parse(jsonS);
             var htmlbtn = ['<div class="detail-btn-list">',
@@ -137,11 +136,14 @@ $(function(){
                             (window.user_id == nodes[i].node_reviewer_id.toString() && nodes[i].review_state != 1?'<a class="detail-btn verify-person" href="javascript:void(0);" data-index="'+ i +'" data-node-id="'+ nodes[i]._id +'">审核</a>':''),
                         '</div>'].join('');
 
-            $(".detail-node-list").append("<span class='node-arrow "+(i==0?"none":"")+"'></span><div class='node-content'><h6 class='node-title'><span class='left'>"+nodes[i].node_name+"</span><span class='right'>"+nodes[i].created_at.split("T")[0]+"创建</span></h6><div class='node-item' id='node"+ i +"'></div>"+htmlbtn+"</div>")
-            // var fb = new Formbuilder({
-            //     selector: '#node'+i,
-            //     bootstrapData: bootData.fields
-            // });
+            $(".detail-node-list").append("<span class='node-arrow "+(i==0?"none":"")+"'></span><div class='node-content'><h6 class='node-title'><span class='left'>"+nodes[i].node_name+"</span><span class='right'>"+nodes[i].created_at.split("T")[0]+"创建</span></h6><div class='node-item none' id='fb"+ i +"'></div><div class='node-item' id='node"+ i +"'></div>"+htmlbtn+"</div>")
+            var fb = new Formbuilder({
+                selector: '#node'+i,
+                bootstrapData: bootData.fields
+            });
+            var container = fb.mainView.$responseFields;
+            $('#fb'+i).html(container.html());
+            $('#fb'+i).find(".actions-wrapper").hide();
 
             var h = ["<div>",
                         "<div class='node-dd'>"+(data.tpls[i] && data.tpls[i].node_name)+"</div>",
@@ -149,10 +151,6 @@ $(function(){
                     ].join("");
 
             $('#node'+i).html(h);
-
-            // var container = fb.mainView.$responseFields;
-            // $('#node'+i).html(container.html());
-            // $('#node'+i).find(".actions-wrapper").hide();
 
         }
 
@@ -178,7 +176,7 @@ $(function(){
             var me = $(this);
             var index = me.attr('data-index');
             var id = me.attr('data-node-id');
-            var nodeH = $('#node'+index).html().toString();
+            var nodeH = $('#fb'+index).html().toString();
             var html = ['<div class="chain-group-dialog" style="max-height:400px;overflow:auto;">',
                             nodeH,
                             '<div class="btn-container">',

@@ -107,6 +107,10 @@
                 position: relative;
                 height: 49px;
                 overflow: hidden;
+
+                &.none{
+                    display: none;
+                }
             }
 
             .node-click{
@@ -175,10 +179,11 @@
                 height: 36px;
                 text-align: center;
                 line-height: 36px;
-                // margin-left: 104px;
+                margin-left: 104px;
                 cursor: pointer;
                 color: #fff;
                 border-radius: 3px;
+                text-decoration: none;
 
                 i{
                     width: 14px;
@@ -190,6 +195,64 @@
                 }
             }
         }
+    }
+
+    .feiyong-content{
+        border: 1px solid #dbe1e7;
+        margin-bottom: 30px;
+        // width: 570px;
+        margin-left: 30px;
+        display: block;
+
+        .node-title{
+            background: #f4f6f9;
+            height: 50px;
+            line-height: 50px;
+            // width: 100%;
+            padding-left: 20px;
+            // text-align: center;
+            color: #4f5e69;
+            // border-bottom: 1px solid #dbe1e7;
+            .left{
+                text-align: left;
+                font-weight: bold;
+            }
+
+            .right{
+                text-align: right;
+                float: right;
+                margin-right: 20px;
+            }
+        }
+
+        .add-container{
+            margin-top: 20px;
+        }
+
+        .flow-inline{
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        label.login-input-icon-1{
+            font-size: 12px;
+            color: #4f5e69;
+            display: inline-block;
+            width: 92px;
+            text-align: right;
+        }
+        .flow-name{
+            border: 1px solid #dbe1e7;
+            text-shadow: none;
+            -moz-border-radius: 2px;
+            -webkit-border-radius: 2px;
+            border-radius: 2px;
+            color: #4f5e69;
+            width: 210px;
+            height: 36px;
+            line-height: 36px;
+        }
+
     }
 
     .detail-flow-info{

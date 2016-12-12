@@ -95,12 +95,124 @@
         <div class="detail-node-list">
 
         </div>
-        {%if flow.flow_state != 1%}
-        <div class="detail-node-form">
-            <!-- <button class="detail-add-btn" id="detailAddNode"><i></i>增加后续节点</button> -->
-            <button class="detail-add-btn" id="detailAddChain"><i></i>增加业务链条信息</button>
+
+        {%if costs.length != 0%}
+        <div class="feiyong-content">
+            <h6 class="node-title"><span class="left">费用信息</span></h6>
+            <div class="add-container">
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">进口增值税：</label>
+                    <input type="text" value="{{costs[0].jinkou_zengzhishui}}" class="flow-name" autocomplete="off" readonly>
+                    <input type="text" value="{{costs[0].company_jinkou_zengzhishui}}" class="flow-name jinkou_zengzhishui" autocomplete="off" readonly>
+                </div>
+
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">增值税：</label>
+                    <input type="text" value="{{costs[0].zengzhishui}}" class="flow-name zengzhishui" autocomplete="off" readonly>
+                    <input type="text" value="{{costs[0].company_zengzhishui}}" class="flow-name " readonly>
+                </div>
+
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">营业税金：</label>
+                    <input type="text" value="{{costs[0].yingyeshuijin_add}}" class="flow-name yingyeshuijin" readonly>
+                    <input type="text" value="{{costs[0].company_yingyeshuijin_add}}" class="flow-name " readonly>
+                </div>
+
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">海运费：</label>
+                    <input type="text" value="{{costs[0].haiyunfei}}" class="flow-name haiyunfei" readonly>
+                    <input type="text" value="{{costs[0].company_haiyunfei}}" class="flow-name " readonly>
+
+                </div>
+
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">保险：</label>
+                    <input type="text" value="{{costs[0].baoxian}}" class="flow-name baoxian" readonly>
+                    <input type="text" value="{{costs[0].company_baoxian}}" class="flow-name " readonly>
+                </div>
+
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">港建费：</label>
+                    <input type="text" value="{{costs[0].gangjianfei}}" class="flow-name gangjianfei" readonly>
+                    <input type="text" value="{{costs[0].company_gangjianfei}}" class="flow-name " readonly>
+                </div>
+
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">业务费：</label>
+                    <input type="text" value="{{costs[0].yewufei}}" class="flow-name yewufei" readonly>
+                    <input type="text" value="{{costs[0].company_yewufei}}" class="flow-name " readonly>
+                </div>
+
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">滞期速遣费：</label>
+                    <input type="text" value="{{costs[0].zhiqisuqianfei}}" class="flow-name zhiqisuqianfei" readonly>
+                    <input type="text" value="{{costs[0].company_zhiqisuqianfei}}" class="flow-name " readonly>
+                </div>
+
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">监管费用：</label>
+                    <input type="text" value="{{costs[0].jianguanfei}}" class="flow-name jianguanfei" readonly>
+                    <input type="text" value="{{costs[0].company_jianguanfei}}" class="flow-name " readonly>
+                </div>
+
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">印花税：</label>
+                    <input type="text" value="{{costs[0].yinhuashui}}" class="flow-name yinhuashui" readonly>
+                    <input type="text" value="{{costs[0].company_yinhuashui}}" class="flow-name " readonly>
+                </div>
+
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">开证费用：</label>
+                    <input type="text" value="{{costs[0].kaizhengfei}}" class="flow-name kaizhengfei" readonly>
+                    <input type="text" value="{{costs[0].company_kaizhengfei}}" class="flow-name " readonly>
+                </div>
+
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">承兑费用：</label>
+                    <input type="text" value="{{costs[0].chengshuifei}}" class="flow-name chengshuifei" readonly>
+                    <input type="text" value="{{costs[0].company_chengshuifei}}" class="flow-name " readonly>
+                </div>
+            </div>
         </div>
         {%endif%}
+
+        {%if chains.length != 0%}
+        <div class="feiyong-content">
+            <h6 class="node-title"><span class="left">业务链条信息</span></h6>
+            <div class="add-container">
+                <div class="flow-inline rili-inline">
+                    <label class="login-input-icon-1">日期：</label>
+                    <input type="text" value="{{moment(chains[0].chain_at).format("YYYY-MM-DD")}}" class="flow-name input-time" readonly>
+                </div>
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">公司名称：</label>
+                    <input type="text" value="{{chains[0].company_name}}" class="flow-name input-name company-input" readonly>
+                </div>
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">成本：</label>
+                    <input type="text" value="{{chains[0].cost_value}}" class="flow-name input-name cost-input" readonly>
+                </div>
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">销售额：</label>
+                    <input type="text" value="{{chains[0].sales_value}}" class="flow-name input-name market-input" readonly>
+                </div>
+                <div class="flow-inline">
+                    <label class="login-input-icon-1">产生利润：</label>
+                    <input type="text" value="{{chains[0].profit_value}}" class="flow-name input-name profit-input" autocomplete="off" readonly>
+                </div>
+            </div>
+        </div>
+        {%endif%}
+
+        <div class="detail-node-form">
+            {%if costs.length == 0%}
+                <a class="detail-add-btn" href="/flow/cost_info?id={{flow._id}}"><i></i>增加费用信息</a>
+            {%endif%}
+            {%if flow.flow_state != 1%}
+                <button class="detail-add-btn" id="detailAddChain"><i></i>增加业务链条信息</button>
+            {%endif%}
+        </div>
+
     </div>
 </div>
 {%endif%}
