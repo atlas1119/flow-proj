@@ -124,7 +124,7 @@ input,button,textarea{
                     display: inline-block;
                     // width: 100%;
                     text-align: center;
-                    color: #90a9bc;
+                    color: #1abefb;
                     font-size: 14px;
                     line-height: 38px;
                 }
@@ -138,7 +138,7 @@ input,button,textarea{
                 .sub-tab{
                     width: 100%;
                     padding-top: 0;
-                    padding-left: 40px;
+                    // padding-left: 40px;
                     color: #90a9bc;
                     font{
                         font-size: 10px;
@@ -147,7 +147,7 @@ input,button,textarea{
                     }
 
                     li{
-
+                        padding-left: 40px;
                         a{
                             color: #90a9bc;
                             padding-top: 0;
