@@ -36,9 +36,8 @@
                 <label class="login-input-icon-1"> 经手人：</label>
                 <label class="login-input-icon-1">{{user_info.name}}</label>
             </div>
-
         </div>
-        
+
         <div class="detail-form">
             <h6 class="form-title"><i></i>基本信息</h6>
             <div class="form-container" id="formMain"></div>
@@ -76,9 +75,10 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span>业务流流水号:{{flow._id}}</span>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span>创建日期:{{moment(flow.created_at).format("YYYY-MM-DD")}}</span></h3>
+        <span>创建日期:{{moment(flow.created_at).format("YYYY-MM-DD")}}</span>
+    </h3>
     <div class="detail-content">
-        <div class="detail-flow-info">
+        <div class="detail-flow-info clearfix">
             <div class="node-inline">
                 <label class="login-input-icon-1">时间：</label>
                 <label class="login-input-icon-1">{{moment(flow.created_at).format("YYYY-MM-DD")}}</label>
@@ -93,6 +93,7 @@
                 <label class="login-input-icon-1"> 经手人：</label>
                 <label class="login-input-icon-1">{{user_info.name}}</label>
             </div>
+            <a class="detail-add-btn-1" href="/report">查看报表</a>
         </div>
         <div class="detail-node-list">
 

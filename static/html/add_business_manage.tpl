@@ -21,7 +21,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <span>创建日期:{{moment(flow.created_at).format("YYYY-MM-DD")}}</span></h3>
     <div class="detail-content">
-        <div class="detail-form inline-detail">
+        <div class="detail-form inline-detail" style="border-right:1px dashed #dbe1e7;padding-right:10px;">
             <h6 class="form-title"><i></i>合同信息*</h6>
             <div class="form-container">
                 <div class="flow-inline">
@@ -86,17 +86,17 @@
                 <table class="work-table">
                     <thead>
                         <tr>
-                            <th>热值</th>
+                            <th>热值<br/>Net calorific value</th>
                             <th>热值基态</th>
-                            <th>硫份</th>
+                            <th>硫份<br/>sulphur</th>
                             <th>硫份基态</th>
-                            <th>合同数量</th>
+                            <th>合同数量<br/>quantity</th>
                             <th>容忍度</th>
-                            <th>贸易方式</th>
-                            <th>付款方式</th>
-                            <th>装港检测机构</th>
+                            <th>贸易方式<br/>terms of trade</th>
+                            <th>付款方式<br/>terms of payment</th>
+                            <th>装港检测机构<br/>surveyor of loading port</th>
                             <th>装港检测标准</th>
-                            <th>受载期</th>
+                            <th>受载期<br/>laycan</th>
                             <th>装港</th>
                         </tr>
                     </thead>

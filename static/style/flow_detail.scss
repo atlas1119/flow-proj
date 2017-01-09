@@ -260,6 +260,7 @@
         margin: 20px 0;
         padding: 20px;
         margin-left: 30px;
+        position: relative;
 
         .node-inline{
             line-height: 25px;
@@ -520,6 +521,34 @@
             margin-left: 20px;
         }
 
+    }
+}
+
+.detail-add-btn-1{
+    border: none;
+    background: #1abefb;
+    display: inline-block;
+    margin: 0 auto;
+    width: 150px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    margin-left: 104px;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 3px;
+    text-decoration: none;
+    position: absolute;
+    right: 10px;
+    top: 41px;
+
+    i{
+        width: 14px;
+        height: 14px;
+        vertical-align: middle;
+        margin-right: 5px;
+        display: inline-block;
+        background: url('/static/image/add_icon.png') no-repeat;
     }
 }
 
