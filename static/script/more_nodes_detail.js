@@ -132,8 +132,8 @@ $(function(){
             var htmlbtn = ['<div class="detail-btn-list">',
                             // '<button class="detail-btn">查看历史变动</button>',
                             (nodes[i].review_state != 1?'<a class="detail-btn" href="/'+ (nodes[i].node_name == '采购'?'business':'flow') +'/editnode?id='+nodes[i]._id+'">编辑</a>':''),
-                            '<a class="detail-btn" href="/flow/editnode?id='+nodes[i]._id+'&edit=0">查看</a>',
-                            (window.user_id == nodes[i].node_reviewer_id.toString() && nodes[i].review_state != 1?'<a class="detail-btn verify-person" href="javascript:void(0);" data-index="'+ i +'" data-node-id="'+ nodes[i]._id +'">审核</a>':''),
+                            '<a class="detail-btn" href="/'+(nodes[i].node_name == '采购'?'business':'flow')+'/editnode?id='+nodes[i]._id+'&edit=0">查看</a>',
+                            (window.user_id == nodes[i].node_reviewer_id.toString() && nodes[i].review_state != 1?'<a class="detail-btn verify-person" href="javascript:void(0);" data-node-name="'+nodes[i].node_name+'" data-index="'+ i +'" data-node-id="'+ nodes[i]._id +'">审核</a>':''),
                         '</div>'].join('');
 
             $(".detail-node-list").append("<span class='node-arrow "+(i==0?"none":"")+"'></span><div class='node-content'><h6 class='node-title'><span class='left'>"+nodes[i].node_name+"</span><span class='right'>"+nodes[i].created_at.split("T")[0]+"创建</span></h6><div class='node-item none' id='fb"+ i +"'></div><div class='node-item' id='node"+ i +"'></div>"+htmlbtn+"</div>")
@@ -177,6 +177,10 @@ $(function(){
             var index = me.attr('data-index');
             var id = me.attr('data-node-id');
             var nodeH = $('#fb'+index).html().toString();
+            if(me.attr("data-node-name") == '采购'){
+                nodeH = "";
+            }
+
             var html = ['<div class="chain-group-dialog" style="max-height:400px;overflow:auto;">',
                             nodeH,
                             '<div class="btn-container">',

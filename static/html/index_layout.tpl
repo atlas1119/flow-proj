@@ -22,7 +22,7 @@
                     <span>我的工作</span>
                 </a>
                 <ul class="sub-tab">
-                    <li><a href="#" class="{{'active' if cur_path.indexOf('model') == -1 and cur_path.indexOf('report') == -1 and cur_path.indexOf('staff') == -1 else ''}}">业务管理</a></li>
+                    <li><a href="/" class="{{'active' if cur_path.indexOf('model') == -1 and cur_path.indexOf('report') == -1 and cur_path.indexOf('staff') == -1 else ''}}">业务管理</a></li>
                     <li><a href="#">应收应付<font>待开发</font></a></li>
                     <li><a href="#">工商管理<font>待开发</font></a></li>
                     <li><a href="#">库存<font>待开发</font></a></li>
@@ -41,7 +41,7 @@
                     <span>我的报表</span>
                 </a>
                 <ul class="sub-tab">
-                    <li><a href="#">利润核算</a></li>
+                    <li><a href="/report" class="{{'active' if cur_path.indexOf('report') != -1 else ''}}">利润核算</a></li>
                 </ul>
             </li>
             {%if session.user.role == 0%}
