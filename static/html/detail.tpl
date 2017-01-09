@@ -38,10 +38,12 @@
             </div>
 
         </div>
+        
         <div class="detail-form">
             <h6 class="form-title"><i></i>基本信息</h6>
             <div class="form-container" id="formMain"></div>
         </div>
+
         <div class="detail-form">
             <h6 class="form-title"><i></i>对接安排工作</h6>
             <div class="node-container">

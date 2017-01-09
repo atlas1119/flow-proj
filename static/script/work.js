@@ -137,6 +137,7 @@ $(function(){
                     }
 
                     postData.flow_first_template_id = temp_id;
+                    postData.work_node_id = dialog.find(".flow-type-list .active").attr("data-id");
                     postData.temp_node = {
                         node_name: dialog.find(".flow-type-list .active").text(),
                         node_type: dialog.find(".flow-templatetype-list .active").text()
@@ -198,7 +199,12 @@ $(function(){
                                 haml: '<div style="text-align:center;margin-bottom:30px;">创建成功！</div>',
                                 buttons:{
                                     "确定":function(){
-                                        window.location.href = '/flow/detail?id='+data.flow._id;
+                                        if(postData.work_node_id == '58355b25b0fe817399e8fa0c'){
+                                            window.location.href = '/business/addnode?id='+data.flow._id+'&tplid='+postData.flow_first_template_id;
+                                        }else {
+                                            window.location.href = '/flow/detail?id='+data.flow._id;
+                                        }
+
                                     }
                                 }
                             });
