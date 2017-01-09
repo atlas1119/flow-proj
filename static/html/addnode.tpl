@@ -54,7 +54,7 @@
                 </div>
                 <div class="node-inline">
                     <label class="login-input-icon-1">审核人员：</label>
-                    <input type="text" placeholder="" class="input-name" id="reviewerId" autocomplete="off" value="{{manage_first_user.name}}">
+                    <input type="text" placeholder="" class="input-name" data-user-id="{{manage_first_user._id}}" id="reviewerId" autocomplete="off" value="{{manage_first_user.name}}">
                 </div>
             </div>
         </div>

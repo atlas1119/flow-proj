@@ -1,0 +1,216 @@
+
+.flow-inline{
+    margin-bottom: 20px;
+    display: block;
+    // margin-right: 85px;
+    position: relative;
+
+    &.rili-inline{
+        position: relative;
+        cursor: pointer;
+        .rili-icon{
+            background: url("/static/image/rili_icon.png") no-repeat;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 10px;
+            top: 8px;
+        }
+    }
+
+}
+
+.inline-detail{
+    display: inline-block;
+}
+
+label.login-input-icon-1{
+    font-size: 12px;
+    color: #4f5e69;
+    display: inline-block;
+    width: 93px;
+    text-align: right;
+}
+
+.flow-name{
+    border: 1px solid #dbe1e7;
+    text-shadow: none;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    color: #4f5e69;
+    width: 310px;
+    height: 36px;
+    line-height: 36px;
+}
+
+.input-time{
+    width: 140px;
+}
+
+.flow-arrow{
+    display: block;
+    position: absolute;
+    border-style: solid;
+    border-width: 4px;
+    border-left-color: #4f5e69;
+    // top: 16px;
+    right: 20px;
+    top: 18px;
+    border-color: transparent;
+    border-top-color: #4f5e69;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+}
+
+.profit-input{
+    border: none;
+}
+
+.select{
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    padding: 0;
+    overflow: hidden;
+    background: #fff;
+    color: #4f5e69;
+    border: 1px solid #dbe1e7;
+    height: 36px;
+    text-shadow: none;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-transition: box-shadow 0.25s ease;
+    -o-transition: box-shadow 0.25s ease;
+    -webkit-transition: box-shadow 0.25s ease;
+    transition: box-shadow 0.25s ease;
+}
+
+.select select {
+    cursor: pointer;
+    padding: 0.5em;
+    padding-right: 2em;
+    width: 310px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    // width: 160% \9;
+    text-transform: none;
+}
+
+.btn-container{
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 32px;
+    .login-step{
+        width: 150px;
+        height: 36px;
+        text-align: center;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+    }
+
+    .login-step-1{
+        background: #f7682a;
+        color: #fff;
+    }
+    .login-step-2{
+        background: #c1c8ca;
+        color: #fff;
+        margin-left: 20px;
+    }
+
+}
+
+input[type=text].input-edit{
+    border: 0;
+    width: 64px;
+    padding: 0;
+    padding-left: 5px;
+    // height: 50px;
+}
+
+
+.work-table{
+    width: 100%;
+    color: #4f5e69;
+    font-size: 12px;
+    border: 1px solid #dbe1e7;
+
+    &.report-table{
+        overflow-x: scroll;
+        width: 1038px;
+        display: inherit;
+
+        th{
+            // width: 200px;
+            line-height: normal;
+            padding-left: 0;
+            padding: 0px 57px;
+        }
+
+        td{
+            // width: 300px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+    }
+
+    thead{
+        background: #f4f6f9;
+        height: 50px;
+        // padding-left: 40px;
+        border-bottom: 1px solid #dbe1e7;
+
+        th{
+            line-height: 50px;
+            padding-left: 5px;
+            font-size: 12px;
+            border-right: 1px solid #dbe1e7;
+        }
+
+    }
+
+    tbody{
+        tr:nth-child(even) {background: #f8f8f8}
+        tr:nth-child(odd) {background: #fff}
+
+        tr{
+            height: 40px;
+
+            td{
+                padding-left: 5px;
+                font-size: 12px;
+                border-right: 1px solid #dbe1e7;
+
+                .warn{
+                    color: #ff5c36;
+                }
+
+                .default-btn{
+                    background: #1abefb;
+                    color: #fff;
+                    border-radius: 2px;
+                    display: inline-block;
+                    padding: 6px 13px;
+                    text-decoration: none;
+
+                    &.right{
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

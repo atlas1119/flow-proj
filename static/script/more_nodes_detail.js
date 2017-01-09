@@ -131,7 +131,7 @@ $(function(){
             var bootData = JSON.parse(jsonS);
             var htmlbtn = ['<div class="detail-btn-list">',
                             // '<button class="detail-btn">查看历史变动</button>',
-                            (nodes[i].review_state != 1?'<a class="detail-btn" href="/flow/editnode?id='+nodes[i]._id+'">编辑</a>':''),
+                            (nodes[i].review_state != 1?'<a class="detail-btn" href="/'+ (nodes[i].node_name == '采购'?'business':'flow') +'/editnode?id='+nodes[i]._id+'">编辑</a>':''),
                             '<a class="detail-btn" href="/flow/editnode?id='+nodes[i]._id+'&edit=0">查看</a>',
                             (window.user_id == nodes[i].node_reviewer_id.toString() && nodes[i].review_state != 1?'<a class="detail-btn verify-person" href="javascript:void(0);" data-index="'+ i +'" data-node-id="'+ nodes[i]._id +'">审核</a>':''),
                         '</div>'].join('');
@@ -255,7 +255,12 @@ $(function(){
                         window.location.href = "/model/createtemplate?id="+next_worknode_id;
                     });
                     dialog.find('.login-step-btn').click(function(){
-                        window.location.href = "/flow/addnode?id="+window.flow_id + "&tplid="+$(".flow-templatetype-list .active").attr("data-id");
+                        if(next_worknode_id == "58355b25b0fe817399e8fa0c"){//采购节点
+                            window.location.href = "/business/addnode?id="+window.flow_id + "&tplid="+$(".flow-templatetype-list .active").attr("data-id");
+                        }else{
+                            window.location.href = "/flow/addnode?id="+window.flow_id + "&tplid="+$(".flow-templatetype-list .active").attr("data-id");
+                        }
+
                     });
                 }
             });

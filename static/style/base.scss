@@ -79,7 +79,7 @@ input,button,textarea{
     flex-direction: row;
 
     .flow-main-left{
-        width: 113px;
+        width: 162px;
         background-color: #2c343a;
         padding-bottom: 10000px;
         margin-bottom: -10000px;
@@ -88,36 +88,41 @@ input,button,textarea{
             width: 100%;
             padding-top: 20px;
             li{
-                height: 100px;
-                border-left: 2px solid #2c343a;
+                // height: 100px;
+                // border-left: 2px solid #2c343a;
                 margin-top: 13px;
                 i{
-                    display: block;
-                    width: 41px;
-                    height: 40px;
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
                     margin: 0 auto;
+                    background-size: 20px 20px;
+                    vertical-align: middle;
+                    margin-right: 10px;
+                    margin-left: 7px;
+                    background-repeat: no-repeat;
                     // margin-top: 15px;
 
                     &.tab-1{
-                        background: url('/static/image/side_work.png') no-repeat;
+                        background-image: url('/static/image/side_work.png');
                     }
 
                     &.tab-2{
-                        background: url('/static/image/side_model.png') no-repeat;
+                        background-image: url('/static/image/side_model.png');
                     }
 
                     &.tab-3{
-                        background: url('/static/image/side_report.png') no-repeat;
+                        background-image: url('/static/image/side_report.png');
                     }
 
                     &.tab-4{
-                        background: url('/static/image/side_staff.png') no-repeat;
+                        background-image: url('/static/image/side_staff.png');
                     }
                 }
 
                 span{
-                    display: block;
-                    width: 100%;
+                    display: inline-block;
+                    // width: 100%;
                     text-align: center;
                     color: #90a9bc;
                     font-size: 14px;
@@ -130,51 +135,77 @@ input,button,textarea{
                     padding-top: 14px;
                 }
 
+                .sub-tab{
+                    width: 100%;
+                    padding-top: 0;
+                    padding-left: 40px;
+                    li{
+
+                        a{
+                            color: #90a9bc;
+                            padding-top: 0;
+                            &:hover{
+                                color: #fff;
+                            }
+
+                            &.active{
+                                color: #fff;
+                            }
+
+                            font{
+                                font-size: 10px;
+                                color: #90a9bc;
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+
                 &.active{
-                    border-left: 2px solid #1abefb;
+                    // border-left: 2px solid #1abefb;
                     span{
-                        color: #fff;
+                        color: #1abefb;
                     }
 
                     i{
                         &.tab-1{
-                            background: url('/static/image/side_work_selected.png') no-repeat;
+                            background-image: url('/static/image/side_work_selected.png');
                         }
 
                         &.tab-2{
-                            background: url('/static/image/side_model_selected.png') no-repeat;
+                            background-image: url('/static/image/side_model_selected.png');
                         }
 
                         &.tab-3{
-                            background: url('/static/image/side_report_selected.png') no-repeat;
+                            background-image: url('/static/image/side_report_selected.png');
                         }
 
                         &.tab-4{
-                            background: url('/static/image/side_staff_selected.png') no-repeat;
+                            background-image: url('/static/image/side_staff_selected.png');
                         }
                     }
                 }
 
                 &:hover{
                     span{
-                        color: #fff;
+                        color: #1abefb;
                     }
 
                     i{
                         &.tab-1{
-                            background: url('/static/image/side_work_selected.png') no-repeat;
+                            background-image: url('/static/image/side_work_selected.png');
                         }
 
                         &.tab-2{
-                            background: url('/static/image/side_model_selected.png') no-repeat;
+                            background-image: url('/static/image/side_model_selected.png');
                         }
 
                         &.tab-3{
-                            background: url('/static/image/side_report_selected.png') no-repeat;
+                            background-image: url('/static/image/side_report_selected.png');
                         }
 
                         &.tab-4{
-                            background: url('/static/image/side_staff_selected.png') no-repeat;
+                            background-image: url('/static/image/side_staff_selected.png');
                         }
                     }
                 }
