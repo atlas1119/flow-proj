@@ -139,6 +139,13 @@ input,button,textarea{
                     width: 100%;
                     padding-top: 0;
                     padding-left: 40px;
+                    color: #90a9bc;
+                    font{
+                        font-size: 10px;
+                        color: #90a9bc;
+                        margin-left: 10px;
+                    }
+
                     li{
 
                         a{
@@ -152,11 +159,7 @@ input,button,textarea{
                                 color: #fff;
                             }
 
-                            font{
-                                font-size: 10px;
-                                color: #90a9bc;
-                                margin-left: 10px;
-                            }
+
                         }
                     }
                 }
