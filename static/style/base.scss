@@ -148,8 +148,16 @@ input,button,textarea{
 
                     li{
                         padding-left: 40px;
+                        margin-top: 0;
+                        // line-height: 25px;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        &:hover{
+                            background-color: #32627a;
+                        }
+
                         a{
-                            color: #90a9bc;
+                            color: #fff;
                             padding-top: 0;
                             &:hover{
                                 color: #fff;
