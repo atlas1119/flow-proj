@@ -36,7 +36,7 @@ $(function(){
         var hetonghao = $("input[name='hetonghao']").val();
         var qiandingriqi = $("input[name='qiandingriqi']").val();
         var hetongdanjia = parseFloat($("input[name='hetongdanjia']").val()) * parseFloat($("input[name='danjia_huilv']").val() || 1);
-        var hetongdanjia = parseFloat($("input[name='hetongjine']").val()) * parseFloat($("input[name='jine_huilv']").val() || 1);
+        var hetongjine = parseFloat($("input[name='hetongjine']").val()) * parseFloat($("input[name='jine_huilv']").val() || 1);
         var buy_gongsi = $("input[name='buy_gongsi']").val();
         var sell_gongsi = $("input[name='sell_gongsi']").val();
 
@@ -58,11 +58,12 @@ $(function(){
             hetonghao:hetonghao,
             qiandingriqi:qiandingriqi,
             hetongdanjia:hetongdanjia,
-            hetongdanjia:hetongdanjia,
+            hetongjine:hetongjine,
             buy_gongsi:buy_gongsi,
             sell_gongsi:sell_gongsi,
 
             node_reviewer: $("#reviewerId").val(),
+            node_struct: "{\"fields\":[]}",
             node_reviewer_id: $("#reviewerId").attr("data-user-id"),
             next_worknode_id: $("#workNodeSelect").children('option:selected').val(),
         };

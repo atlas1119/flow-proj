@@ -24,16 +24,16 @@
             <div class="form-container">
                 <div class="flow-inline">
                     <label class="login-input-icon-1">合同号S/C NO：</label>
-                    <input type="text" placeholder="" class="flow-name" name="hetonghao" autocomplete="off" value="">
+                    <input type="text" placeholder="" class="flow-name" name="hetonghao" autocomplete="off" value="{{caigou_node[0].hetonghao}}">
                 </div>
                 <div class="flow-inline rili-inline" style="width:408px;">
                     <label class="login-input-icon-1">签订日期：</label>
-                    <input id="datepicker" type="text" placeholder="" class="flow-name" name="qiandingriqi" autocomplete="off" value="" readonly>
+                    <input id="datepicker" type="text" placeholder="" class="flow-name" name="qiandingriqi" autocomplete="off" value="{{moment(caigou_node[0].qiandingriqi).format("YYYY-MM-DD")}}" readonly>
                     <i class="rili-icon"></i>
                 </div>
                 <div class="flow-inline rili-inline">
                     <label class="login-input-icon-1">合同单价：</label>
-                    <input type="text" placeholder="" class="flow-name input-time" name="hetongdanjia" autocomplete="off" value="">
+                    <input type="text" placeholder="" class="flow-name input-time" name="hetongdanjia" autocomplete="off" value="{{caigou_node[0].hetongdanjia}}">
                     <div class="select input-time">
                           <select name="make" id="xiaoshouDp">
                             <option value="">人民币</option>
@@ -42,12 +42,12 @@
                           <i class="flow-arrow" style="right:10px;"></i>
                     </div>
                     <span>汇率：</span>
-                    <input type="text" placeholder="可不填" class="flow-name input-time" name="danjia_huilv" autocomplete="off" value="">
+                    <input type="text" placeholder="可不填" class="flow-name input-time" name="danjia_huilv" autocomplete="off" value="{{caigou_node[0].danjia_huilv}}">
                 </div>
 
                 <div class="flow-inline rili-inline">
                     <label class="login-input-icon-1">合同金额：</label>
-                    <input type="text" placeholder="" class="flow-name input-time" name="hetongjine" autocomplete="off" value="">
+                    <input type="text" placeholder="" class="flow-name input-time" name="hetongjine" autocomplete="off" value="{{caigou_node[0].hetongjine}}">
                     <div class="select input-time">
                           <select name="make" id="xiaoshouDp">
                             <option value="">人民币</option>
@@ -57,7 +57,7 @@
                     </div>
 
                     <span>汇率：</span>
-                    <input type="text" placeholder="可不填" class="flow-name input-time" name="jine_huilv" autocomplete="off" value="">
+                    <input type="text" placeholder="可不填" class="flow-name input-time" name="jine_huilv" autocomplete="off" value="{{caigou_node[0].jine_huilv}}">
                 </div>
 
             </div>
@@ -68,11 +68,11 @@
             <div class="form-container">
                 <div class="flow-inline">
                     <label class="login-input-icon-1">买方公司：</label>
-                    <input type="text" placeholder="" class="flow-name" name="buy_gongsi" autocomplete="off" value="">
+                    <input type="text" placeholder="" class="flow-name" name="buy_gongsi" autocomplete="off" value="{{caigou_node[0].buy_gongsi}}">
                 </div>
                 <div class="flow-inline">
                     <label class="login-input-icon-1">卖方公司：</label>
-                    <input type="text" placeholder="" class="flow-name" name="sell_gongsi" autocomplete="off" value="">
+                    <input type="text" placeholder="" class="flow-name" name="sell_gongsi" autocomplete="off" value="{{caigou_node[0].sell_gongsi}}">
                 </div>
 
             </div>
@@ -100,18 +100,18 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><input type="text" class="input-edit" name="rezhi"/></td>
-                            <td><input type="text" class="input-edit" name="rezhijitai"/></td>
-                            <td><input type="text" class="input-edit" name="liufen"/></td>
-                            <td><input type="text" class="input-edit" name="liufenjitai"/></td>
-                            <td><input type="text" class="input-edit" name="hetongshuliang"/></td>
-                            <td><input type="text" class="input-edit" name="rongrendu"/></td>
-                            <td><input type="text" class="input-edit" name="maoyifangshi"/></td>
-                            <td><input type="text" class="input-edit" name="fukuangfangshi"/></td>
-                            <td><input type="text" class="input-edit" name="zhuanggangjigou"/></td>
-                            <td><input type="text" class="input-edit" name="zhuanggangbiaozhun"/></td>
-                            <td><input type="text" class="input-edit" name="shouzaiqi"/></td>
-                            <td><input type="text" class="input-edit" name="zhuanggang"/></td>
+                            <td><input type="text" class="input-edit" name="rezhi" value="{{caigou_node[0].rezhi}}"/></td>
+                            <td><input type="text" class="input-edit" name="rezhijitai" value="{{caigou_node[0].rezhijitai}}"/></td>
+                            <td><input type="text" class="input-edit" name="liufen" value="{{caigou_node[0].liufen}}"/></td>
+                            <td><input type="text" class="input-edit" name="liufenjitai" value="{{caigou_node[0].liufenjitai}}"/></td>
+                            <td><input type="text" class="input-edit" name="hetongshuliang" value="{{caigou_node[0].hetongshuliang}}"/></td>
+                            <td><input type="text" class="input-edit" name="rongrendu" value="{{caigou_node[0].rongrendu}}"/></td>
+                            <td><input type="text" class="input-edit" name="maoyifangshi" value="{{caigou_node[0].maoyifangshi}}"/></td>
+                            <td><input type="text" class="input-edit" name="fukuangfangshi" value="{{caigou_node[0].fukuangfangshi}}"/></td>
+                            <td><input type="text" class="input-edit" name="zhuanggangjigou" value="{{caigou_node[0].zhuanggangjigou}}"/></td>
+                            <td><input type="text" class="input-edit" name="zhuanggangbiaozhun" value="{{caigou_node[0].zhuanggangbiaozhun}}"/></td>
+                            <td><input type="text" class="input-edit" name="shouzaiqi" value="{{caigou_node[0].shouzaiqi}}"/></td>
+                            <td><input type="text" class="input-edit" name="zhuanggang" value="{{caigou_node[0].zhuanggang}}"/></td>
                         </tr>
                     </tbody>
                 </table>
