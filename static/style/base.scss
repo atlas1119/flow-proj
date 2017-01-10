@@ -152,6 +152,12 @@ input,button,textarea{
                         // line-height: 25px;
                         padding-top: 10px;
                         padding-bottom: 10px;
+                        &.disabled{
+                            &:hover{
+                                background-color: transparent;
+                            }
+                        }
+
                         &:hover{
                             background-color: #32627a;
                         }

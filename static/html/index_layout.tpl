@@ -23,9 +23,9 @@
                 </a>
                 <ul class="sub-tab">
                     <li><a href="/" class="{{'active' if cur_path.indexOf('model') == -1 and cur_path.indexOf('report') == -1 and cur_path.indexOf('staff') == -1 else ''}}">业务管理</a></li>
-                    <li>应收应付<font>待开发</font></li>
-                    <li>工商管理<font>待开发</font></li>
-                    <li>库存<font>待开发</font></li>
+                    <li class="disabled">应收应付<font>待开发</font></li>
+                    <li class="disabled">工商管理<font>待开发</font></li>
+                    <li class="disabled">库存<font>待开发</font></li>
                 </ul>
             </li>
 
@@ -47,9 +47,9 @@
                 <ul class="sub-tab">
                     <li><a href="/staff" class="{{'active' if cur_path.indexOf('staff') != -1 else ''}}">员工管理</a></li>
                     <li><a href="/model" class="{{'active' if cur_path.indexOf('model') != -1 else ''}}">模块管理</a></li>
-                    <li>事业部管理<font>待开发</font></li>
-                    <li>公司管理<font>待开发</font></li>
-                    <li>供应商管理<font>待开发</font></li>
+                    <li class="disabled">事业部管理<font>待开发</font></li>
+                    <li class="disabled">公司管理<font>待开发</font></li>
+                    <li class="disabled">供应商管理<font>待开发</font></li>
                 </ul>
             </li>
             {%endif%}
