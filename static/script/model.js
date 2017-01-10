@@ -4,9 +4,9 @@ $(function(){
         var id = $("#workNodeSelect option:selected").val();
         window.location.href = "/model/createtemplate?id="+id;
     });
-    
+
     //删除
-    $("#delModel").click(function(){
+    $(".delModel").click(function(){
         var id = $(this).attr('data-id');
         $.ext_dialog.open({
             width: 300,

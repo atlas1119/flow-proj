@@ -53,7 +53,7 @@
                     <td>{{item.node_name}}</td>
                     <td>{{item.work.work_name}}</td>
                     <td>{{item.user.name}}</td>
-                    <td><a href="/model/edittemplate?id={{item._id}}" data-id="{{item._id}}" class="default-btn right">编辑</a><a href="javascript:void(0)" data-id="{{item._id}}" id="delModel" class="default-btn">删除</a></td>
+                    <td><a href="/model/edittemplate?id={{item._id}}" data-id="{{item._id}}" class="default-btn right">编辑</a><a href="javascript:void(0)" data-id="{{item._id}}" id="delModel" class="default-btn delModel">删除</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
