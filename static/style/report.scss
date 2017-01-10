@@ -74,7 +74,7 @@
     height: 100%;
 
     .report-left{
-        width: 142px;
+        width: 165px;
         border-right: 1px solid #dbe1e7;
         background-color: #f0f0f0;
 
@@ -143,11 +143,16 @@
                     line-height: 40px;
                     padding-left: 45px;
                     border-bottom: 1px solid #dbe1e7;
+
+                    font{
+                        font-size: 12px;
+                        margin-left: 5px;
+                    }
                 }
 
                 a.item-on{
                     color: #1abefb;
-                    width: 69%;
+                    width: 73%;
                     border-right: none;
                     background-color: #fff;
                     font-weight: normal;

@@ -21,8 +21,8 @@
                         <i></i><a href="#" onclick="return false;">台账</a>
                     </dt>
                     <dd>
-                        <a href="/prompt/index" >船务表</a>
-                        <a href="/prompt/index" >外贸业务表</a>
+                        <a >船务表<font>待开发</font></a>
+                        <a >外贸业务表<font>待开发</font></a>
                         <!-- <a href="/prompt/index" >毛利表</a> -->
                     </dd>
                 </dl>
@@ -43,7 +43,7 @@
                         <i></i><a href="#" onclick="return false;">仓储</a>
                     </dt>
                     <dd>
-                        <a href="/prompt/index" >仓储表</a>
+                        <a >仓储表<font>待开发</font></a>
                         <!-- <a href="/prompt/index" >毛利表</a> -->
                         <!-- <a href="/prompt/index" >毛利表</a> -->
                     </dd>

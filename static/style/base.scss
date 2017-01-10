@@ -158,6 +158,10 @@ input,button,textarea{
                             }
                         }
 
+                        &.active{
+                            background-color: #32627a;
+                        }
+
                         &:hover{
                             background-color: #32627a;
                         }
